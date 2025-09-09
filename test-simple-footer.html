@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Simple Footer - Constructora S&D</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .header {
+            background: #0066ff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .content {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+        }
+        #inicio { background: linear-gradient(135deg, #0066ff, #0052cc); }
+        #quienes-somos { background: linear-gradient(135deg, #4dabf7, #0066ff); }
+        #servicios { background: linear-gradient(135deg, #0052cc, #003d99); }
+        #proyectos-realizados { background: linear-gradient(135deg, #003d99, #002966); }
+        #contacto { background: linear-gradient(135deg, #002966, #001a4d); }
+        
+        .footer {
+            background: linear-gradient(135deg, #003d99 0%, #002966 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+        }
+        .footer-link:hover {
+            color: #4dabf7;
+            transform: translateY(-2px);
+            background: rgba(77, 171, 247, 0.2);
+            border-color: #4dabf7;
+        }
+        .test-info {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            color: #333;
+        }
+        .console-output {
+            background: #000;
+            color: #0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            max-height: 200px;
+            overflow-y: auto;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧪 Test Simple - Enlaces del Footer</h1>
+        <p>Prueba los enlaces rápidos del pie de página</p>
+    </div>
+    
+    <div class="content">
+        <div class="test-info">
+            <h2>📋 Instrucciones:</h2>
+            <p>1. Ve al pie de página (scroll hacia abajo)</p>
+            <p>2. Haz clic en cualquier enlace rápido</p>
+            <p>3. Deberías navegar a la sección correspondiente</p>
+            <p>4. Abre la consola (F12) para ver los logs</p>
+        </div>
+        
+        <div class="console-output" id="console-output">
+            Iniciando test simple...<br>
+        </div>
+    </div>
+    
+    <!-- Secciones de prueba -->
+    <section id="inicio" class="section">
+        <div>
+            <h2>🏠 INICIO</h2>
+            <p>Si llegaste aquí desde el footer, ¡funciona!</p>
+        </div>
+    </section>
+    
+    <section id="quienes-somos" class="section">
+        <div>
+            <h2>👥 QUIÉNES SOMOS</h2>
+            <p>Navegación desde footer exitosa</p>
+        </div>
+    </section>
+    
+    <section id="servicios" class="section">
+        <div>
+            <h2>🛠️ SERVICIOS</h2>
+            <p>Los enlaces del footer funcionan correctamente</p>
+        </div>
+    </section>
+    
+    <section id="proyectos-realizados" class="section">
+        <div>
+            <h2>🏗️ PROYECTOS REALIZADOS</h2>
+            <p>Navegación suave implementada</p>
+        </div>
+    </section>
+    
+    <section id="contacto" class="section">
+        <div>
+            <h2>📞 CONTACTO</h2>
+            <p>¡Todos los enlaces funcionan!</p>
+        </div>
+    </section>
+    
+    <!-- Footer con enlaces -->
+    <footer class="footer">
+        <h3>🔗 Enlaces Rápidos</h3>
+        <div class="footer-links">
+            <a href="#inicio" class="footer-link">
+                <i>🏠</i> Inicio
+            </a>
+            <a href="#quienes-somos" class="footer-link">
+                <i>👥</i> Quiénes Somos
+            </a>
+            <a href="#servicios" class="footer-link">
+                <i>🛠️</i> Servicios
+            </a>
+            <a href="#proyectos-realizados" class="footer-link">
+                <i>🏗️</i> Proyectos
+            </a>
+            <a href="#contacto" class="footer-link">
+                <i>📞</i> Contacto
+            </a>
+        </div>
+        <p>© 2025 Constructora S&D. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Función para agregar mensaje a la consola
+        function addToConsole(message, type = 'info') {
+            const console = document.getElementById('console-output');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#ff6b6b' : type === 'success' ? '#51cf66' : '#0f0';
+            console.innerHTML += `<span style="color: ${color}">[${timestamp}] ${message}</span><br>`;
+            console.scrollTop = console.scrollHeight;
+        }
+        
+        // Interceptar console.log para mostrar en la página
+        const originalLog = console.log;
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            if (args[0] && typeof args[0] === 'string') {
+                addToConsole(args[0], 'info');
+            }
+        };
+        
+        // Interceptar console.error
+        const originalError = console.error;
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            if (args[0] && typeof args[0] === 'string') {
+                addToConsole(args[0], 'error');
+            }
+        };
+        
+        // Inicializar al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            addToConsole('🚀 Test simple iniciado', 'success');
+            addToConsole('📋 Esperando inicialización de enlaces del footer...', 'info');
+            
+            // Verificar después de un tiempo
+            setTimeout(() => {
+                const footerLinks = document.querySelectorAll('.footer-link');
+                addToConsole(`📋 Enlaces del footer encontrados: ${footerLinks.length}`, 'info');
+                
+                footerLinks.forEach((link, index) => {
+                    const href = link.getAttribute('href');
+                    addToConsole(`🔗 Enlace ${index + 1}: ${href}`, 'info');
+                });
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

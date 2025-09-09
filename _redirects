@@ -1,0 +1,9 @@
+# Netlify redirects configuration
+# Redirect all 404s to custom 404 page
+/*    /404.html   404
+
+# Redirect www to non-www
+https://www.constructorasd.cl/*    https://constructorasd.cl/:splat    301!
+
+# Redirect HTTP to HTTPS
+http://constructorasd.cl/*    https://constructorasd.cl/:splat    301!

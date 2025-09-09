@@ -1,0 +1,94 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a252f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecf0f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bdc3c7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo circular con sombra -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)" stroke="#fff" stroke-width="4"/>
+  
+  <!-- Sombra del fondo -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="2"/>
+  
+  <!-- Edificio principal - más moderno -->
+  <rect x="45" y="65" width="45" height="85" fill="url(#buildingGradient)" rx="3"/>
+  <!-- Ventanas del edificio principal con efecto 3D -->
+  <rect x="52" y="75" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="63" y="75" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="74" y="75" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="52" y="90" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="63" y="90" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="74" y="90" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="52" y="105" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="63" y="105" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="74" y="105" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="52" y="120" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="63" y="120" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  <rect x="74" y="120" width="7" height="9" fill="url(#accentGradient)" rx="1"/>
+  
+  <!-- Edificio secundario -->
+  <rect x="105" y="80" width="35" height="70" fill="url(#buildingGradient)" rx="3"/>
+  <!-- Ventanas del edificio secundario -->
+  <rect x="112" y="90" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="122" y="90" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="132" y="90" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="112" y="105" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="122" y="105" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="132" y="105" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="112" y="120" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="122" y="120" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  <rect x="132" y="120" width="6" height="8" fill="url(#accentGradient)" rx="1"/>
+  
+  <!-- Edificio pequeño -->
+  <rect x="30" y="110" width="30" height="40" fill="url(#buildingGradient)" rx="3"/>
+  <!-- Ventanas del edificio pequeño -->
+  <rect x="36" y="120" width="5" height="7" fill="url(#accentGradient)" rx="1"/>
+  <rect x="45" y="120" width="5" height="7" fill="url(#accentGradient)" rx="1"/>
+  <rect x="36" y="132" width="5" height="7" fill="url(#accentGradient)" rx="1"/>
+  <rect x="45" y="132" width="5" height="7" fill="url(#accentGradient)" rx="1"/>
+  
+  <!-- Grúa de construcción moderna -->
+  <line x1="155" y1="160" x2="155" y2="105" stroke="#fff" stroke-width="5"/>
+  <line x1="155" y1="105" x2="175" y2="85" stroke="#fff" stroke-width="5"/>
+  <circle cx="155" cy="105" r="5" fill="#fff"/>
+  <rect x="150" y="155" width="10" height="10" fill="#fff" rx="2"/>
+  <!-- Cable de la grúa -->
+  <line x1="175" y1="85" x2="175" y2="95" stroke="#fff" stroke-width="3"/>
+  <!-- Contrapeso -->
+  <rect x="145" y="160" width="20" height="8" fill="#95a5a6" rx="2"/>
+  
+  <!-- Herramientas de construcción -->
+  <!-- Martillo -->
+  <rect x="20" y="135" width="6" height="18" fill="#95a5a6" rx="1"/>
+  <rect x="16" y="130" width="14" height="6" fill="#7f8c8d" rx="1"/>
+  
+  <!-- Nivel -->
+  <rect x="25" y="160" width="20" height="3" fill="#34495e" rx="1"/>
+  <circle cx="30" cy="161.5" r="1" fill="#e74c3c"/>
+  
+  <!-- Texto S&D mejorado con sombra -->
+  <text x="100" y="38" font-family="Arial Black, Arial, sans-serif" font-size="32" font-weight="900" text-anchor="middle" fill="url(#textGradient)" stroke="#fff" stroke-width="2">S&D</text>
+  
+  <!-- Texto Constructora mejorado -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">CONSTRUCTORA</text>
+  
+  <!-- Líneas decorativas -->
+  <line x1="50" y1="48" x2="150" y2="48" stroke="#fff" stroke-width="2" opacity="0.8"/>
+  <line x1="60" y1="52" x2="140" y2="52" stroke="#e74c3c" stroke-width="1" opacity="0.6"/>
+</svg>

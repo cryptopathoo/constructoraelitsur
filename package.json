@@ -1,0 +1,24 @@
+{
+  "name": "constructora-sd-website",
+  "version": "1.0.0",
+  "description": "Sitio web profesional para Constructora S&D",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3000 --open=/index.html"
+  },
+  "keywords": [
+    "constructora",
+    "construccion",
+    "website",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Constructora S&D",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,31 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2c5530;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4a7c59;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6b8e23;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a0522d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo sutil -->
+  <rect x="0" y="0" width="300" height="100" fill="rgba(255,255,255,0.1)" rx="15"/>
+  
+  <!-- Texto principal S&D -->
+  <text x="150" y="45" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900" text-anchor="middle" fill="url(#textGradient)" stroke="#fff" stroke-width="1">S&D</text>
+  
+  <!-- Texto Constructora -->
+  <text x="150" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="url(#accentGradient)">CONSTRUCTORA</text>
+  
+  <!-- Línea decorativa -->
+  <line x1="50" y1="55" x2="250" y2="55" stroke="url(#accentGradient)" stroke-width="2" opacity="0.7"/>
+  
+  <!-- Elementos decorativos del sur -->
+  <circle cx="30" cy="30" r="3" fill="#4a7c59" opacity="0.6"/>
+  <circle cx="270" cy="30" r="3" fill="#4a7c59" opacity="0.6"/>
+  <circle cx="30" cy="70" r="3" fill="#4a7c59" opacity="0.6"/>
+  <circle cx="270" cy="70" r="3" fill="#4a7c59" opacity="0.6"/>
+</svg>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de Enlaces - Constructora S&D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .diagnostic-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+        }
+        .diagnostic-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .diagnostic-section h3 {
+            color: #0066ff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .test-button {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: #0066ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .test-button:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+        }
+        .test-button.success {
+            background: #28a745;
+        }
+        .test-button.error {
+            background: #dc3545;
+        }
+        .status-box {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .console-output {
+            background: #000;
+            color: #0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 1rem 0;
+        }
+        .link-test {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+        }
+        .link-test .link-info {
+            flex: 1;
+        }
+        .link-test .link-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagnostic-container">
+        <h1 style="text-align: center; color: #0066ff; margin-bottom: 2rem;">
+            <i class="fas fa-stethoscope"></i> Diagnóstico de Enlaces
+        </h1>
+        
+        <div class="diagnostic-section">
+            <h3><i class="fas fa-info-circle"></i> Información del Sistema</h3>
+            <div id="system-info" class="status-box status-info">
+                Cargando información del sistema...
+            </div>
+        </div>
+        
+        <div class="diagnostic-section">
+            <h3><i class="fas fa-search"></i> Verificación de Secciones</h3>
+            <div id="sections-check" class="status-box status-info">
+                Verificando secciones...
+            </div>
+        </div>
+        
+        <div class="diagnostic-section">
+            <h3><i class="fas fa-link"></i> Enlaces de Navegación</h3>
+            <div id="nav-links" class="status-box status-info">
+                Analizando enlaces de navegación...
+            </div>
+        </div>
+        
+        <div class="diagnostic-section">
+            <h3><i class="fas fa-list"></i> Enlaces del Footer</h3>
+            <div id="footer-links" class="status-box status-info">
+                Analizando enlaces del footer...
+            </div>
+        </div>
+        
+        <div class="diagnostic-section">
+            <h3><i class="fas fa-play"></i> Pruebas Manuales</h3>
+            <p>Haz clic en estos botones para probar la navegación:</p>
+            <button class="test-button" onclick="testNavigation('#inicio')">Probar #inicio</button>
+            <button class="test-button" onclick="testNavigation('#quienes-somos')">Probar #quienes-somos</button>
+            <button class="test-button" onclick="testNavigation('#servicios')">Probar #servicios</button>
+            <button class="test-button" onclick="testNavigation('#proyectos-realizados')">Probar #proyectos-realizados</button>
+            <button class="test-button" onclick="testNavigation('#contacto')">Probar #contacto</button>
+        </div>
+        
+        <div class="diagnostic-section">
+            <h3><i class="fas fa-terminal"></i> Consola de Diagnóstico</h3>
+            <div id="console-output" class="console-output">
+                Iniciando diagnóstico...<br>
+            </div>
+            <button class="test-button" onclick="runFullDiagnostic()">Ejecutar Diagnóstico Completo</button>
+            <button class="test-button" onclick="clearConsole()">Limpiar Consola</button>
+        </div>
+        
+        <div class="diagnostic-section">
+            <h3><i class="fas fa-tools"></i> Herramientas de Reparación</h3>
+            <button class="test-button" onclick="reinitializeNavigation()">Reinicializar Navegación</button>
+            <button class="test-button" onclick="fixAllLinks()">Reparar Todos los Enlaces</button>
+            <button class="test-button" onclick="testAllSections()">Probar Todas las Secciones</button>
+        </div>
+    </div>
+    
+    <!-- Secciones de prueba -->
+    <section id="inicio" style="height: 100vh; background: linear-gradient(135deg, #0066ff, #0052cc); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Inicio</h2>
+            <p>Esta es la sección de inicio para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="quienes-somos" style="height: 100vh; background: linear-gradient(135deg, #4dabf7, #0066ff); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Quiénes Somos</h2>
+            <p>Esta es la sección de quiénes somos para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="servicios" style="height: 100vh; background: linear-gradient(135deg, #0052cc, #003d99); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Servicios</h2>
+            <p>Esta es la sección de servicios para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="proyectos-realizados" style="height: 100vh; background: linear-gradient(135deg, #003d99, #002966); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Proyectos Realizados</h2>
+            <p>Esta es la sección de proyectos realizados para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="contacto" style="height: 100vh; background: linear-gradient(135deg, #002966, #001a4d); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Contacto</h2>
+            <p>Esta es la sección de contacto para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+    <script>
+        // Función para agregar mensaje a la consola
+        function addToConsole(message, type = 'info') {
+            const console = document.getElementById('console-output');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#ff6b6b' : type === 'success' ? '#51cf66' : '#0f0';
+            console.innerHTML += `<span style="color: ${color}">[${timestamp}] ${message}</span><br>`;
+            console.scrollTop = console.scrollHeight;
+        }
+        
+        // Función para probar navegación
+        function testNavigation(targetId) {
+            addToConsole(`🧪 Probando navegación a: ${targetId}`, 'info');
+            
+            const target = document.querySelector(targetId);
+            if (target) {
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 120;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                addToConsole(`✅ Navegación exitosa a ${targetId}`, 'success');
+            } else {
+                addToConsole(`❌ No se encontró la sección ${targetId}`, 'error');
+            }
+        }
+        
+        // Función para ejecutar diagnóstico completo
+        function runFullDiagnostic() {
+            addToConsole('🔍 Iniciando diagnóstico completo...', 'info');
+            
+            // Verificar secciones
+            const sections = ['#inicio', '#quienes-somos', '#servicios', '#proyectos-realizados', '#proyectos-finalizados', '#contacto'];
+            sections.forEach(section => {
+                const element = document.querySelector(section);
+                if (element) {
+                    addToConsole(`✅ Sección encontrada: ${section}`, 'success');
+                } else {
+                    addToConsole(`❌ Sección NO encontrada: ${section}`, 'error');
+                }
+            });
+            
+            // Verificar enlaces de navegación
+            const navLinks = document.querySelectorAll('.nav-link');
+            addToConsole(`📋 Enlaces de navegación encontrados: ${navLinks.length}`, 'info');
+            
+            // Verificar enlaces del footer
+            const footerLinks = document.querySelectorAll('.footer-link');
+            addToConsole(`📋 Enlaces del footer encontrados: ${footerLinks.length}`, 'info');
+            
+            addToConsole('🔍 Diagnóstico completo finalizado', 'info');
+        }
+        
+        // Función para limpiar consola
+        function clearConsole() {
+            document.getElementById('console-output').innerHTML = 'Consola limpiada...<br>';
+        }
+        
+        // Función para reinicializar navegación
+        function reinitializeNavigation() {
+            addToConsole('🔄 Reinicializando navegación...', 'info');
+            if (typeof initSmoothScroll === 'function') {
+                initSmoothScroll();
+                addToConsole('✅ Navegación reinicializada', 'success');
+            } else {
+                addToConsole('❌ Función initSmoothScroll no encontrada', 'error');
+            }
+        }
+        
+        // Función para reparar todos los enlaces
+        function fixAllLinks() {
+            addToConsole('🔧 Reparando todos los enlaces...', 'info');
+            
+            // Aplicar scroll suave a todos los enlaces
+            const allLinks = document.querySelectorAll('a[href^="#"]');
+            allLinks.forEach(link => {
+                if (!link.hasAttribute('data-fixed')) {
+                    link.setAttribute('data-fixed', 'true');
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        testNavigation(targetId);
+                    });
+                }
+            });
+            
+            addToConsole(`✅ ${allLinks.length} enlaces reparados`, 'success');
+        }
+        
+        // Función para probar todas las secciones
+        function testAllSections() {
+            addToConsole('🧪 Probando todas las secciones...', 'info');
+            const sections = ['#inicio', '#quienes-somos', '#servicios', '#proyectos-realizados', '#contacto'];
+            
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    testNavigation(section);
+                }, index * 1000);
+            });
+        }
+        
+        // Inicializar diagnóstico al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            addToConsole('🚀 Página de diagnóstico cargada', 'success');
+            
+            // Verificar información del sistema
+            const systemInfo = document.getElementById('system-info');
+            systemInfo.innerHTML = `
+                <strong>Navegador:</strong> ${navigator.userAgent}<br>
+                <strong>URL:</strong> ${window.location.href}<br>
+                <strong>Timestamp:</strong> ${new Date().toLocaleString()}<br>
+                <strong>Script cargado:</strong> ${typeof initSmoothScroll === 'function' ? '✅' : '❌'}
+            `;
+            
+            // Verificar secciones
+            const sectionsCheck = document.getElementById('sections-check');
+            const sections = ['#inicio', '#quienes-somos', '#servicios', '#proyectos-realizados', '#proyectos-finalizados', '#contacto'];
+            let sectionsFound = 0;
+            sections.forEach(section => {
+                if (document.querySelector(section)) sectionsFound++;
+            });
+            sectionsCheck.innerHTML = `${sectionsFound}/${sections.length} secciones encontradas`;
+            
+            // Verificar enlaces de navegación
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navLinksDiv = document.getElementById('nav-links');
+            navLinksDiv.innerHTML = `${navLinks.length} enlaces de navegación encontrados`;
+            
+            // Verificar enlaces del footer
+            const footerLinks = document.querySelectorAll('.footer-link');
+            const footerLinksDiv = document.getElementById('footer-links');
+            footerLinksDiv.innerHTML = `${footerLinks.length} enlaces del footer encontrados`;
+            
+            // Ejecutar diagnóstico automático
+            setTimeout(runFullDiagnostic, 1000);
+        });
+    </script>
+</body>
+</html>

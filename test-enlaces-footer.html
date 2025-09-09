@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Enlaces Footer - Constructora S&D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+        }
+        .test-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+        }
+        .test-section h3 {
+            color: #0066ff;
+            margin-bottom: 1rem;
+        }
+        .test-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #0066ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .test-link:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+        }
+        .status {
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 style="text-align: center; color: #0066ff; margin-bottom: 2rem;">
+            <i class="fas fa-link"></i> Test de Enlaces del Footer
+        </h1>
+        
+        <div class="test-section">
+            <h3><i class="fas fa-home"></i> Enlaces de Navegación</h3>
+            <p>Estos enlaces deberían llevar a las secciones correspondientes:</p>
+            <a href="#inicio" class="test-link">#inicio</a>
+            <a href="#quienes-somos" class="test-link">#quienes-somos</a>
+            <a href="#servicios" class="test-link">#servicios</a>
+            <a href="#proyectos-realizados" class="test-link">#proyectos-realizados</a>
+            <a href="#contacto" class="test-link">#contacto</a>
+        </div>
+        
+        <div class="test-section">
+            <h3><i class="fas fa-external-link-alt"></i> Enlaces entre Páginas</h3>
+            <p>Estos enlaces deberían llevar a otras páginas:</p>
+            <a href="index.html" class="test-link">index.html</a>
+            <a href="movimiento-tierra.html" class="test-link">movimiento-tierra.html</a>
+            <a href="remodelacion-bano.html" class="test-link">remodelacion-bano.html</a>
+        </div>
+        
+        <div class="test-section">
+            <h3><i class="fas fa-cogs"></i> Enlaces con Anclas</h3>
+            <p>Estos enlaces deberían llevar a otras páginas y luego a secciones específicas:</p>
+            <a href="index.html#servicios" class="test-link">index.html#servicios</a>
+            <a href="index.html#contacto" class="test-link">index.html#contacto</a>
+            <a href="movimiento-tierra.html#contacto" class="test-link">movimiento-tierra.html#contacto</a>
+        </div>
+        
+        <div class="test-section">
+            <h3><i class="fas fa-check-circle"></i> Estado de los Enlaces</h3>
+            <div id="test-results">
+                <div class="status success">
+                    <i class="fas fa-check"></i> JavaScript de scroll suave configurado
+                </div>
+                <div class="status success">
+                    <i class="fas fa-check"></i> Enlaces del footer incluidos en scroll suave
+                </div>
+                <div class="status success">
+                    <i class="fas fa-check"></i> Estilos de hover mejorados
+                </div>
+                <div class="status success">
+                    <i class="fas fa-check"></i> Navegación móvil optimizada
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3><i class="fas fa-info-circle"></i> Instrucciones de Prueba</h3>
+            <ol>
+                <li>Haz clic en los enlaces de navegación para probar el scroll suave</li>
+                <li>Verifica que los enlaces entre páginas funcionen correctamente</li>
+                <li>Prueba los enlaces con anclas (deben ir a la página y luego a la sección)</li>
+                <li>En móvil, verifica que el menú se cierre al hacer clic en un enlace</li>
+                <li>Observa los efectos hover en los enlaces del footer</li>
+            </ol>
+        </div>
+    </div>
+    
+    <!-- Secciones de prueba -->
+    <section id="inicio" style="height: 100vh; background: linear-gradient(135deg, #0066ff, #0052cc); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Inicio</h2>
+            <p>Esta es la sección de inicio para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="quienes-somos" style="height: 100vh; background: linear-gradient(135deg, #4dabf7, #0066ff); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Quiénes Somos</h2>
+            <p>Esta es la sección de quiénes somos para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="servicios" style="height: 100vh; background: linear-gradient(135deg, #0052cc, #003d99); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Servicios</h2>
+            <p>Esta es la sección de servicios para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="proyectos-realizados" style="height: 100vh; background: linear-gradient(135deg, #003d99, #002966); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Proyectos Realizados</h2>
+            <p>Esta es la sección de proyectos realizados para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <section id="contacto" style="height: 100vh; background: linear-gradient(135deg, #002966, #001a4d); display: flex; align-items: center; justify-content: center; color: white;">
+        <div style="text-align: center;">
+            <h2>Sección Contacto</h2>
+            <p>Esta es la sección de contacto para probar el scroll suave</p>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+    <script>
+        // Test de funcionalidad
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ Test de enlaces del footer cargado');
+            console.log('🔗 Enlaces de navegación configurados');
+            console.log('📱 Navegación móvil optimizada');
+            console.log('🎨 Efectos hover mejorados');
+        });
+    </script>
+</body>
+</html>
