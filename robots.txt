@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://constructorasd.cl/sitemap.xml
+Sitemap: https://constructoraelitsur.cl/sitemap.xml
 
 # Archivos específicos
 Disallow: /images/
