@@ -188,7 +188,7 @@ body {
     align-items: center;
     justify-content: center;
     background: 
-                url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop') center/cover no-repeat,
+                url('images/hero-desktop.jpg') center/cover no-repeat,
                 linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
                 linear-gradient(135deg, #2c5530 0%, #4a7c59 50%, #1a1a1a 100%);
     color: white;
@@ -1377,7 +1377,7 @@ body {
         text-align: center;
         padding: 100px 20px 50px;
         background: 
-                    url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=768&h=1024&fit=crop') center/cover no-repeat,
+                    url('images/hero-mobile.jpg') center/cover no-repeat,
                     linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
                     linear-gradient(135deg, #2c5530 0%, #4a7c59 50%, #1a1a1a 100%);
     }
