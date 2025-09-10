@@ -38,11 +38,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%);
     backdrop-filter: blur(20px);
     z-index: 1000;
-    box-shadow: 0 8px 32px rgba(0, 102, 255, 0.1), 0 0 0 1px rgba(0, 102, 255, 0.1);
-    border-bottom: 2px solid transparent;
+    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.15);
+    border-bottom: 2px solid rgba(0, 123, 255, 0.2);
     background-clip: padding-box;
     animation: headerSlide 0.8s ease-out;
     transition: transform 0.3s ease-in-out;
@@ -163,6 +163,10 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
     .hamburger span {
@@ -180,7 +184,8 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(44, 85, 48, 0.6) 0%, rgba(74, 124, 89, 0.6) 100%), 
-                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=800&fit=crop&crop=center') center/cover no-repeat;
+                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=800&fit=crop&crop=center') center/cover no-repeat,
+                linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -1241,7 +1246,7 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 80px;
+        top: 100px;
         flex-direction: column;
         background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%);
         backdrop-filter: blur(20px);
@@ -1249,10 +1254,11 @@ body {
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 123, 255, 0.15);
-        padding: 1.5rem 0;
+        padding: 2rem 0;
         margin-left: 0;
-        gap: 1rem;
+        gap: 1.5rem;
         z-index: 999;
+        border-top: 2px solid rgba(0, 123, 255, 0.3);
     }
     
     .nav-menu.active {
@@ -1293,6 +1299,7 @@ body {
         visibility: visible !important;
         opacity: 1 !important;
         transform: translateY(0) !important;
+        height: 100px !important;
     }
     
     .navbar {
