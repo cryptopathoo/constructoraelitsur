@@ -35,18 +35,21 @@ body {
 
 /* Header */
 .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%);
-    backdrop-filter: blur(20px);
-    z-index: 1000;
-    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.15);
-    border-bottom: 2px solid rgba(0, 123, 255, 0.2);
-    background-clip: padding-box;
-    animation: headerSlide 0.8s ease-out;
-    transition: transform 0.3s ease-in-out;
-    height: 100px;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    z-index: 1000 !important;
+    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.15) !important;
+    border-bottom: 2px solid rgba(0, 123, 255, 0.2) !important;
+    background-clip: padding-box !important;
+    animation: headerSlide 0.8s ease-out !important;
+    transition: transform 0.3s ease-in-out !important;
+    height: 100px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .header.hidden {
@@ -185,7 +188,7 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), 
-                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat,
+                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&crop=center&fm=webp&q=80') center/cover no-repeat,
                 linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: white;
     position: relative;
@@ -1372,6 +1375,9 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 100px 20px 50px;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), 
+                    url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=768&h=1024&fit=crop&crop=center&fm=webp&q=80') center/cover no-repeat,
+                    linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     }
     
     .hero-content h1 {

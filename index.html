@@ -887,7 +887,7 @@
             <h2>Proyectos en Desarrollo</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop&crop=center" alt="Proyecto Residencial Norte" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Proyecto+Residencial'">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop&crop=center&fm=webp&q=80" alt="Proyecto Residencial Norte" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Proyecto+Residencial'">
                     <div class="project-info">
                         <h3>Residencial Norte</h3>
                         <p>Complejo habitacional de 120 departamentos con áreas verdes y amenities.</p>
@@ -895,7 +895,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center" alt="Centro Comercial Plaza" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Centro+Comercial'">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center&fm=webp&q=80" alt="Centro Comercial Plaza" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Centro+Comercial'">
                     <div class="project-info">
                         <h3>Centro Comercial Plaza</h3>
                         <p>Moderno centro comercial con 50 locales comerciales y estacionamiento.</p>
@@ -903,7 +903,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center" alt="Planta Industrial" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Planta+Industrial'">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center&fm=webp&q=80" alt="Planta Industrial" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Planta+Industrial'">
                     <div class="project-info">
                         <h3>Planta Industrial Sur</h3>
                         <p>Complejo industrial de 5,000 m² para manufactura especializada.</p>
@@ -920,7 +920,7 @@
             <h2>Proyectos Finalizados</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop&crop=center" alt="Torre Residencial">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop&crop=center&fm=webp&q=80" alt="Torre Residencial" loading="lazy">
                     <div class="project-info">
                         <h3>Torre Residencial Central</h3>
                         <p>Edificio de 20 pisos con 80 departamentos y vista panorámica.</p>
@@ -928,7 +928,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&crop=center" alt="Oficinas Corporativas">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&crop=center&fm=webp&q=80" alt="Oficinas Corporativas" loading="lazy">
                     <div class="project-info">
                         <h3>Oficinas Corporativas</h3>
                         <p>Complejo de oficinas de 3,000 m² con diseño moderno y eficiente.</p>
@@ -936,7 +936,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center" alt="Remodelación Hotel">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center&fm=webp&q=80" alt="Remodelación Hotel" loading="lazy">
                     <div class="project-info">
                         <h3>Remodelación Hotel Premium</h3>
                         <p>Renovación completa de hotel de 150 habitaciones y áreas comunes.</p>
@@ -1164,16 +1164,58 @@
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
             
             console.log('🍔 Hamburger encontrado:', hamburger);
             console.log('📱 Nav menu encontrado:', navMenu);
             
             if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
-                    console.log('🖱️ Click en hamburger');
+                // Función para cerrar el menú
+                function closeMenu() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    console.log('📱 Menú cerrado');
+                }
+                
+                // Función para abrir/cerrar el menú
+                function toggleMenu() {
                     hamburger.classList.toggle('active');
                     navMenu.classList.toggle('active');
                     console.log('📱 Menú activo:', navMenu.classList.contains('active'));
+                }
+                
+                // Click en hamburger
+                hamburger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('🖱️ Click en hamburger');
+                    toggleMenu();
+                });
+                
+                // Click en enlaces del menú - cerrar menú
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        console.log('🔗 Click en enlace, cerrando menú');
+                        closeMenu();
+                    });
+                });
+                
+                // Click fuera del menú - cerrar menú
+                document.addEventListener('click', function(e) {
+                    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                        if (navMenu.classList.contains('active')) {
+                            console.log('👆 Click fuera del menú, cerrando');
+                            closeMenu();
+                        }
+                    }
+                });
+                
+                // Tecla Escape - cerrar menú
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        console.log('⌨️ Tecla Escape, cerrando menú');
+                        closeMenu();
+                    }
                 });
             }
         });
