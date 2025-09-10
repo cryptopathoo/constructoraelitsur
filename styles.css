@@ -46,6 +46,7 @@ body {
     background-clip: padding-box;
     animation: headerSlide 0.8s ease-out;
     transition: transform 0.3s ease-in-out;
+    height: 100px;
 }
 
 .header.hidden {
@@ -183,9 +184,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(44, 85, 48, 0.6) 0%, rgba(74, 124, 89, 0.6) 100%), 
-                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=800&fit=crop&crop=center') center/cover no-repeat,
-                linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), 
+                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat,
+                linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -1169,6 +1170,65 @@ body {
     100% { width: 0%; }
 }
 
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-icon {
+    color: white;
+    font-size: 28px;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: rgba(0, 0, 0, 0.8);
+}
+
+.whatsapp-button:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -1252,13 +1312,15 @@ body {
         backdrop-filter: blur(20px);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease;
         box-shadow: 0 10px 27px rgba(0, 123, 255, 0.15);
         padding: 2rem 0;
         margin-left: 0;
         gap: 1.5rem;
-        z-index: 999;
+        z-index: 998;
         border-top: 2px solid rgba(0, 123, 255, 0.3);
+        height: calc(100vh - 100px);
+        overflow-y: auto;
     }
     
     .nav-menu.active {

@@ -687,34 +687,18 @@
 <body>
     <!-- Header -->
     <header class="header">
-        
-        <!-- Ráfagas de luz azul -->
-        <div class="light-bursts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
-            <div class="burst burst1" style="position: absolute; top: 20%; left: -100px; width: 200px; height: 2px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove1 4s ease-in-out infinite;"></div>
-            <div class="burst burst2" style="position: absolute; top: 50%; right: -150px; width: 300px; height: 1px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove2 6s ease-in-out infinite;"></div>
-            <div class="burst burst3" style="position: absolute; top: 80%; left: -200px; width: 400px; height: 1.5px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove3 5s ease-in-out infinite;"></div>
-            <div class="burst burst4" style="position: absolute; top: 30%; right: -120px; width: 240px; height: 1px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove4 7s ease-in-out infinite;"></div>
-        </div>
-        
-        <!-- Efectos de resplandor sutil -->
-        <div class="glow-effects" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
-            <div class="glow glow1" style="position: absolute; top: 10%; left: 20%; width: 60px; height: 60px; background: radial-gradient(circle, rgba(0, 123, 255, 0.1) 0%, transparent 70%); border-radius: 50%; animation: glowPulse1 8s ease-in-out infinite;"></div>
-            <div class="glow glow2" style="position: absolute; top: 60%; right: 25%; width: 40px; height: 40px; background: radial-gradient(circle, rgba(0, 123, 255, 0.08) 0%, transparent 70%); border-radius: 50%; animation: glowPulse2 10s ease-in-out infinite;"></div>
-            <div class="glow glow3" style="position: absolute; bottom: 20%; left: 60%; width: 30px; height: 30px; background: radial-gradient(circle, rgba(0, 123, 255, 0.06) 0%, transparent 70%); border-radius: 50%; animation: glowPulse3 12s ease-in-out infinite;"></div>
-        </div>
-        
-        <nav class="navbar" style="position: relative; z-index: 2;">
+        <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="logo_tipo_Elit_Sur-removebg-preview.png" alt="ElitSur Constructora" class="logo-img" style="height: 180px; width: auto; background: transparent; border: none; filter: drop-shadow(0 6px 12px rgba(0, 123, 255, 0.3)) drop-shadow(0 0 20px rgba(0, 123, 255, 0.2)); transition: all 0.3s ease; animation: logoFloat 3s ease-in-out infinite;">
+                    <img src="logo_tipo_Elit_Sur-removebg-preview.png" alt="ElitSur Constructora" class="logo-img">
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Inicio</a></li>
-                    <li><a href="#quienes-somos" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Quiénes Somos</a></li>
-                    <li><a href="#servicios" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Servicios</a></li>
-                    <li><a href="#proyectos-realizados" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Proyectos Realizados</a></li>
-                    <li><a href="#proyectos-finalizados" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Proyectos Finalizados</a></li>
-                    <li><a href="#contacto" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Contacto</a></li>
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#proyectos-realizados" class="nav-link">Proyectos Realizados</a></li>
+                    <li><a href="#proyectos-finalizados" class="nav-link">Proyectos Finalizados</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -723,9 +707,6 @@
                 </div>
             </div>
         </nav>
-        
-        <!-- Borde inferior elegante con gradiente -->
-        <div class="header-bottom-border" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent 0%, rgba(0, 123, 255, 0.6) 20%, #007BFF 50%, rgba(0, 123, 255, 0.6) 80%, transparent 100%); animation: borderGlow 4s ease-in-out infinite alternate;"></div>
     </header>
 
     <!-- Hero Section -->
@@ -1156,6 +1137,16 @@
         <div class="footer-top-border" style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent 0%, rgba(0, 123, 255, 0.6) 20%, #007BFF 50%, rgba(0, 123, 255, 0.6) 80%, transparent 100%); animation: footerBorderGlow 4s ease-in-out infinite alternate;"></div>
     </footer>
 
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button" onclick="openWhatsApp()">
+        <div class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="whatsapp-tooltip">
+            <span>¡Escríbenos por WhatsApp!</span>
+        </div>
+    </div>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -1186,6 +1177,14 @@
                 });
             }
         });
+        
+        // Función para abrir WhatsApp
+        function openWhatsApp() {
+            const phoneNumber = '+56948088573'; // Tu número de WhatsApp
+            const message = 'Hola! Me interesa conocer más sobre los servicios de Constructora Elite Sur.';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
     </script>
     
     <!-- Script para manejar el formulario de contacto -->
