@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construcción Industrial - Constructora Elite Sur | Villarrica</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Construcción Industrial en Villarrica. Construimos plantas, bodegas y complejos manufactureros de gran escala, garantizando eficiencia y seguridad. Más de 15 años de experiencia.">
+    <meta name="keywords" content="construcción industrial, plantas industriales, bodegas, complejos manufactureros, Villarrica, La Araucanía, constructora">
+    <meta name="author" content="Constructora Elite Sur">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Construcción Industrial - Constructora Elite Sur">
+    <meta property="og:description" content="Construimos plantas, bodegas y complejos manufactureros de gran escala, garantizando eficiencia y seguridad en Villarrica.">
+    <meta property="og:image" content="logo_tipo_Elit_Sur-removebg-preview.png">
+    <meta property="og:url" content="https://constructoraelitsur.cl/construccion-industrial.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo_tipo_Elit_Sur-removebg-preview.png">
+    <link rel="canonical" href="https://constructoraelitsur.cl/construccion-industrial.html">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css?v=11">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Resetear márgenes y padding para eliminar espacios en blanco */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            border-top: none !important;
+        }
+        
+        /* Asegurar que no haya espacios entre el body y el header */
+        body > *:first-child {
+            margin-top: 0 !important;
+        }
+        
+        /* Botón de regreso */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: rgba(0, 123, 255, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .back-button:hover {
+            background: rgba(0, 123, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+        
+        /* Estilos específicos para la página de servicio */
+        .service-hero {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.9) 0%, rgba(0, 86, 179, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=600&fit=crop&crop=center') center/cover no-repeat;
+            padding: 100px 0 80px;
+            color: white;
+            text-align: center;
+            position: relative;
+            margin-top: 0;
+        }
+        
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .service-content {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .service-intro {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .service-intro h2 {
+            color: #007BFF;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card i {
+            font-size: 3rem;
+            color: #007BFF;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: #1e293b;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .process-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 3rem 0;
+        }
+        
+        .process-section h2 {
+            color: #007BFF;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .process-step .step-number {
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        
+        .process-step h3 {
+            color: #1e293b;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .process-step p {
+            color: #64748b;
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #007BFF;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background: white;
+            color: #007BFF;
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .service-intro h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón de regreso -->
+    <button class="back-button" onclick="window.location.href='index.html'" title="Volver a la página principal">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%); border-radius: 0 0 25px 25px; border-bottom: none; box-shadow: 0 10px 40px rgba(0, 123, 255, 0.15); position: relative; overflow: hidden; margin: 0; padding: 0; top: 0; left: 0; width: 100%; backdrop-filter: blur(10px);">
+        <div class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo_tipo_Elit_Sur-removebg-preview.png" alt="Constructora Elite Sur" class="logo-img">
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#quienes-somos" class="nav-link">Quiénes Somos</a>
+                    <a href="index.html#servicios" class="nav-link">Servicios</a>
+                    <a href="index.html#proyectos-realizados" class="nav-link">Proyectos</a>
+                    <a href="index.html#contacto" class="nav-link">Contacto</a>
+                </nav>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>🏭 Construcción Industrial</h1>
+            <p>Construimos plantas, bodegas y complejos manufactureros de gran escala, garantizando eficiencia y seguridad en Villarrica y toda la Región de La Araucanía.</p>
+            <a href="#contacto" class="cta-button">Solicitar Cotización</a>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <!-- Service Introduction -->
+            <div class="service-intro">
+                <h2>Construimos la Infraestructura Industrial del Futuro</h2>
+                <p>Especialistas en construcción industrial, desarrollamos complejos manufactureros que combinan eficiencia operativa, seguridad industrial y sostenibilidad. Desde plantas de producción hasta centros logísticos, garantizamos infraestructura robusta y tecnológicamente avanzada.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Plantas de Producción</h3>
+                    <p>Construimos plantas industriales completas con líneas de producción, sistemas de ventilación y todas las instalaciones especializadas requeridas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-warehouse"></i>
+                    <h3>Centros Logísticos</h3>
+                    <p>Desarrollamos bodegas y centros de distribución con acceso vehicular, sistemas de almacenamiento y tecnología de última generación.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Complejos Manufactureros</h3>
+                    <p>Creamos complejos industriales integrales que incluyen producción, almacenamiento, oficinas administrativas y servicios auxiliares.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Terminales de Carga</h3>
+                    <p>Construimos terminales especializados para carga y descarga con muelles, grúas y sistemas de manejo de materiales.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Laboratorios Industriales</h3>
+                    <p>Desarrollamos laboratorios y centros de investigación con especificaciones técnicas especializadas y sistemas de seguridad.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Plantas de Tratamiento</h3>
+                    <p>Construimos plantas de tratamiento de residuos, reciclaje y procesamiento con tecnología ambiental de vanguardia.</p>
+                </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="process-section">
+                <h2>Nuestro Proceso de Construcción Industrial</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Análisis Industrial</h3>
+                        <p>Estudiamos los procesos productivos, flujos de materiales y requerimientos técnicos específicos de tu industria.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Diseño Especializado</h3>
+                        <p>Creamos diseños que optimizan la eficiencia operativa, seguridad industrial y cumplimiento normativo.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Ingeniería Técnica</h3>
+                        <p>Desarrollamos planos técnicos detallados y gestionamos permisos ambientales e industriales especializados.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Construcción Industrial</h3>
+                        <p>Ejecutamos la obra con materiales industriales de alta resistencia y sistemas especializados para tu sector.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Puesta en Marcha</h3>
+                        <p>Entregamos tu planta industrial operativa con todas las certificaciones, pruebas y capacitación del personal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>¿Listo para Expandir tu Capacidad Industrial?</h2>
+                <p>Contáctanos hoy mismo y comencemos a construir la infraestructura industrial que tu empresa necesita</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contacto" class="cta-button">
+                        <i class="fas fa-envelope"></i>
+                        Solicitar Cotización
+                    </a>
+                    <a href="tel:+56912345678" class="cta-button secondary">
+                        <i class="fas fa-phone"></i>
+                        Llamar Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%); border-radius: 25px 25px 0 0; border-top: none; box-shadow: 0 -10px 40px rgba(0, 123, 255, 0.15); position: relative; overflow: hidden; margin: 0; padding: 0; backdrop-filter: blur(10px);">
+        <div class="container" style="position: relative; z-index: 2; padding: 1.5rem 1rem 2rem 1rem; max-width: 1200px; margin: 0 auto;">
+            <div class="footer-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2rem; align-items: start;">
+                <div class="footer-logo-section" style="text-align: left;">
+                    <div class="footer-logo-container" style="margin-bottom: 1rem;">
+                        <div class="logo">
+                            <img src="logo_tipo_Elit_Sur-removebg-preview.png" alt="Constructora Elite Sur" class="logo-img" style="height: 80px; width: auto; background: transparent; border: none; filter: drop-shadow(0 4px 8px rgba(0, 123, 255, 0.2));">
+                        </div>
+                    </div>
+                    <p style="color: #e3f2fd; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">Construyendo el futuro con excelencia y compromiso en Villarrica, La Araucanía.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title" style="color: #4dabf7; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-building"></i>
+                        Servicios
+                    </h3>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><a href="construccion-residencial.html" class="footer-link" style="color: #e3f2fd; text-decoration: none; transition: color 0.3s ease;">Construcción Residencial</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="construccion-comercial.html" class="footer-link" style="color: #e3f2fd; text-decoration: none; transition: color 0.3s ease;">Construcción Comercial</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="construccion-industrial.html" class="footer-link" style="color: #e3f2fd; text-decoration: none; transition: color 0.3s ease;">Construcción Industrial</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html#servicios" class="footer-link" style="color: #e3f2fd; text-decoration: none; transition: color 0.3s ease;">Ver Todos los Servicios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title" style="color: #4dabf7; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Contacto
+                    </h3>
+                    <div class="footer-contact" style="color: #e3f2fd; font-size: 0.9rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone" style="color: #4dabf7; margin-right: 0.5rem;"></i> +56 9 1234 5678</p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: #4dabf7; margin-right: 0.5rem;"></i> info@constructoraelitsur.cl</p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="color: #4dabf7; margin-right: 0.5rem;"></i> Villarrica, La Araucanía</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title" style="color: #4dabf7; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-share-alt"></i>
+                        Síguenos
+                    </h3>
+                    <div class="social-links" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#" class="social-link" style="color: #e3f2fd; font-size: 1.5rem; transition: color 0.3s ease;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link" style="color: #e3f2fd; font-size: 1.5rem; transition: color 0.3s ease;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" style="color: #e3f2fd; font-size: 1.5rem; transition: color 0.3s ease;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button" onclick="openWhatsApp()" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <div class="whatsapp-icon" style="background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); cursor: pointer; transition: all 0.3s ease;">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

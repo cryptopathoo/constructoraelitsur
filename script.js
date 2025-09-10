@@ -469,10 +469,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ==================== CHATBOT FUNCTIONS ====================
+// ==================== WHATSAPP FUNCTIONS ====================
+
+// Función para abrir WhatsApp
+function openWhatsApp() {
+    const phoneNumber = '56948088573';
+    const message = '¡Hola! Me interesa conocer más sobre los servicios de Constructora Elite Sur.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    console.log('📱 Abriendo WhatsApp...');
+    window.open(whatsappUrl, '_blank');
+}
+
+// ==================== CHATBOT FUNCTIONS (DEPRECATED) ====================
 
 // Inicializar chatbot
 function initChatbot() {
+    console.log('🤖 Inicializando chatbot...');
+    
+    // Verificar que el chatbot existe
+    const chatbotToggle = document.querySelector('.chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    
+    if (!chatbotToggle) {
+        console.error('❌ Chatbot toggle not found');
+        return;
+    }
+    
+    if (!chatbotWindow) {
+        console.error('❌ Chatbot window not found');
+        return;
+    }
+    
+    console.log('✅ Chatbot elements found');
+    
     // Mensajes predefinidos del bot
     chatbotMessages = [
         {
@@ -564,22 +594,51 @@ function initChatbot() {
             response: '¡Hasta luego! 👋 Fue un placer ayudarte. ¡Que tengas un excelente día!'
         }
     ];
+    
+    // Configurar event listeners
+    chatbotToggle.addEventListener('click', toggleChatbot);
+    
+    const chatbotClose = document.querySelector('.chatbot-close');
+    if (chatbotClose) {
+        chatbotClose.addEventListener('click', toggleChatbot);
+    }
+    
+    const chatbotInput = document.getElementById('chatbotInput');
+    if (chatbotInput) {
+        chatbotInput.addEventListener('keypress', handleChatbotKeypress);
+    }
+    
+    const chatbotSendButton = document.querySelector('.chatbot-input button');
+    if (chatbotSendButton) {
+        chatbotSendButton.addEventListener('click', sendChatbotMessage);
+    }
+    
+    console.log('✅ Chatbot event listeners configured');
 }
 
 // Alternar chatbot
 function toggleChatbot() {
+    console.log('🤖 Toggle chatbot clicked');
     const chatbotWindow = document.getElementById('chatbotWindow');
     const chatbotBadge = document.querySelector('.chatbot-badge');
     
+    if (!chatbotWindow) {
+        console.error('❌ Chatbot window not found');
+        return;
+    }
+    
     chatbotOpen = !chatbotOpen;
+    console.log('🤖 Chatbot open:', chatbotOpen);
     
     if (chatbotOpen) {
         chatbotWindow.classList.add('active');
+        chatbotWindow.style.display = 'flex';
         if (chatbotBadge) {
             chatbotBadge.style.display = 'none';
         }
     } else {
         chatbotWindow.classList.remove('active');
+        chatbotWindow.style.display = 'none';
     }
 }
 
@@ -1243,9 +1302,16 @@ function initHeaderScroll() {
             const documentHeight = document.documentElement.scrollHeight;
             const windowHeight = window.innerHeight;
             const footerHeight = 300; // Altura aproximada del footer
+            const isMobile = window.innerWidth <= 768; // Detectar dispositivos móviles
 
             // Calcular si estamos cerca del footer
             const nearFooter = scrollTop + windowHeight >= documentHeight - footerHeight;
+
+            // En móviles, mantener el header siempre visible
+            if (isMobile) {
+                header.classList.remove('hidden');
+                return;
+            }
 
             // Ocultar header al hacer scroll hacia abajo (excepto cerca del footer)
             if (scrollTop > lastScrollTop && scrollTop > 100 && !nearFooter) {
@@ -1264,6 +1330,14 @@ function initHeaderScroll() {
         }, THROTTLE_DELAY);
 
         window.addEventListener('scroll', handleScroll, { passive: true });
+        
+        // También escuchar cambios de tamaño de ventana para móviles
+        window.addEventListener('resize', () => {
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile) {
+                header.classList.remove('hidden');
+            }
+        });
     }
 }
 
@@ -1520,5 +1594,6 @@ function showErrorNotification(message) {
         }, 300);
     }, 3000);
 }
- 
+
+ 
  

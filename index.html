@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- Versión actualizada: v5 - Cambios en Quiénes Somos -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Constructora Elite Sur - Construyendo el Futuro">
     <meta property="og:description" content="Especialistas en construcción residencial, comercial e industrial en Villarrica, La Araucanía. Movimiento de tierra, remodelaciones y proyectos de excelencia.">
-    <meta property="og:image" content="logo 2,0.png">
+    <meta property="og:image" content="logo_tipo_Elit_Sur-removebg-preview.png">
     <meta property="og:url" content="https://constructoraelitsur.cl">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Constructora Elite Sur">
@@ -29,11 +30,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Constructora Elite Sur - Construyendo el Futuro">
     <meta name="twitter:description" content="Especialistas en construcción en Villarrica, La Araucanía. Movimiento de tierra, remodelaciones y proyectos de excelencia.">
-    <meta name="twitter:image" content="logo 2,0.png">
+    <meta name="twitter:image" content="logo_tipo_Elit_Sur-removebg-preview.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo 2,0.png">
-    <link rel="apple-touch-icon" href="logo 2,0.png">
+    <link rel="icon" type="image/png" href="logo_tipo_Elit_Sur-removebg-preview.png">
+    <link rel="apple-touch-icon" href="logo_tipo_Elit_Sur-removebg-preview.png">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://constructoraelitsur.cl">
@@ -46,7 +47,7 @@
         "name": "Constructora Elite Sur",
         "description": "Especialistas en construcción residencial, comercial e industrial en Villarrica, La Araucanía",
         "url": "https://constructoraelitsur.cl",
-        "logo": "logo 2,0.png",
+        "logo": "logo_tipo_Elit_Sur-removebg-preview.png",
         "foundingDate": "2008",
         "address": {
             "@type": "PostalAddress",
@@ -67,25 +68,653 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=11">
+    <style>
+        /* Resetear márgenes y padding para eliminar espacios en blanco */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            border-top: none !important;
+        }
+        
+        /* Asegurar que no haya espacios entre el body y el header */
+        body > *:first-child {
+            margin-top: 0 !important;
+        }
+        
+        /* Forzar que el header esté en la parte superior */
+        .header.header {
+            position: relative !important;
+            top: 0 !important;
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        /* Eliminar cualquier espacio del navbar */
+        .navbar {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .nav-link:hover {
+            color: #00bfff !important;
+            background: rgba(0, 102, 255, 0.2) !important;
+            transform: translateY(-2px) !important;
+            transition: all 0.3s ease !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+        .logo-img:hover {
+            transform: scale(1.05) !important;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4)) !important;
+        }
+        
+        /* Animación de movimiento del logo */
+        @keyframes logoFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-3px) rotate(0.5deg); 
+            }
+            50% { 
+                transform: translateY(-5px) rotate(0deg); 
+            }
+            75% { 
+                transform: translateY(-3px) rotate(-0.5deg); 
+            }
+        }
+        
+        /* Efecto de resplandor sutil para logo sin fondo */
+        .logo-img {
+            position: relative;
+            background: transparent !important;
+            border: none !important;
+        }
+        
+        .logo-img::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            right: -25px;
+            bottom: -25px;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.3) 0%, rgba(0, 123, 255, 0.15) 40%, rgba(255, 255, 255, 0.05) 60%, transparent 80%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: logoGlow 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes logoGlow {
+            0% { 
+                opacity: 0.4; 
+                transform: scale(0.9); 
+            }
+            100% { 
+                opacity: 0.8; 
+                transform: scale(1.2); 
+            }
+        }
+        
+        /* Animación elegante y sutil para el logo */
+        @keyframes logoFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+            }
+            25% { 
+                transform: translateY(-4px) rotate(0.5deg); 
+                filter: drop-shadow(0 8px 16px rgba(0, 123, 255, 0.3));
+            }
+            50% { 
+                transform: translateY(-6px) rotate(0deg); 
+                filter: drop-shadow(0 10px 20px rgba(0, 123, 255, 0.4));
+            }
+            75% { 
+                transform: translateY(-4px) rotate(-0.5deg); 
+                filter: drop-shadow(0 8px 16px rgba(0, 123, 255, 0.3));
+            }
+        }
+        
+        /* Animaciones para las ráfagas de luz azul */
+        @keyframes burstMove1 {
+            0% { 
+                transform: translateX(-200px); 
+                opacity: 0;
+            }
+            20% { 
+                opacity: 1;
+            }
+            80% { 
+                opacity: 1;
+            }
+            100% { 
+                transform: translateX(calc(100vw + 200px)); 
+                opacity: 0;
+            }
+        }
+        
+        @keyframes burstMove2 {
+            0% { 
+                transform: translateX(200px); 
+                opacity: 0;
+            }
+            15% { 
+                opacity: 0.8;
+            }
+            85% { 
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translateX(calc(-100vw - 200px)); 
+                opacity: 0;
+            }
+        }
+        
+        @keyframes burstMove3 {
+            0% { 
+                transform: translateX(-300px); 
+                opacity: 0;
+            }
+            25% { 
+                opacity: 0.9;
+            }
+            75% { 
+                opacity: 0.9;
+            }
+            100% { 
+                transform: translateX(calc(100vw + 300px)); 
+                opacity: 0;
+            }
+        }
+        
+        @keyframes burstMove4 {
+            0% { 
+                transform: translateX(250px); 
+                opacity: 0;
+            }
+            30% { 
+                opacity: 0.7;
+            }
+            70% { 
+                opacity: 0.7;
+            }
+            100% { 
+                transform: translateX(calc(-100vw - 250px)); 
+                opacity: 0;
+            }
+        }
+        
+        /* Animaciones para los efectos de resplandor */
+        @keyframes glowPulse1 {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.1;
+            }
+            50% { 
+                transform: scale(1.3); 
+                opacity: 0.2;
+            }
+        }
+        
+        @keyframes glowPulse2 {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.08;
+            }
+            50% { 
+                transform: scale(1.4); 
+                opacity: 0.15;
+            }
+        }
+        
+        @keyframes glowPulse3 {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.06;
+            }
+            50% { 
+                transform: scale(1.5); 
+                opacity: 0.12;
+            }
+        }
+        
+        /* Animación para el borde inferior */
+        @keyframes borderGlow {
+            0% { 
+                opacity: 0.6; 
+                transform: scaleX(1);
+                box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+            }
+            100% { 
+                opacity: 1; 
+                transform: scaleX(1.02);
+                box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+            }
+        }
+        
+        /* Animaciones para las ráfagas de luz azul del footer */
+        @keyframes footerBurstMove1 {
+            0% { 
+                transform: translateX(-200px); 
+                opacity: 0;
+            }
+            20% { 
+                opacity: 1;
+            }
+            80% { 
+                opacity: 1;
+            }
+            100% { 
+                transform: translateX(calc(100vw + 200px)); 
+                opacity: 0;
+            }
+        }
+        
+        @keyframes footerBurstMove2 {
+            0% { 
+                transform: translateX(200px); 
+                opacity: 0;
+            }
+            15% { 
+                opacity: 0.8;
+            }
+            85% { 
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translateX(calc(-100vw - 200px)); 
+                opacity: 0;
+            }
+        }
+        
+        @keyframes footerBurstMove3 {
+            0% { 
+                transform: translateX(-300px); 
+                opacity: 0;
+            }
+            25% { 
+                opacity: 0.9;
+            }
+            75% { 
+                opacity: 0.9;
+            }
+            100% { 
+                transform: translateX(calc(100vw + 300px)); 
+                opacity: 0;
+            }
+        }
+        
+        @keyframes footerBurstMove4 {
+            0% { 
+                transform: translateX(250px); 
+                opacity: 0;
+            }
+            30% { 
+                opacity: 0.7;
+            }
+            70% { 
+                opacity: 0.7;
+            }
+            100% { 
+                transform: translateX(calc(-100vw - 250px)); 
+                opacity: 0;
+            }
+        }
+        
+        /* Animaciones para los efectos de resplandor del footer */
+        @keyframes footerGlowPulse1 {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.08;
+            }
+            50% { 
+                transform: scale(1.3); 
+                opacity: 0.15;
+            }
+        }
+        
+        @keyframes footerGlowPulse2 {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.06;
+            }
+            50% { 
+                transform: scale(1.4); 
+                opacity: 0.12;
+            }
+        }
+        
+        @keyframes footerGlowPulse3 {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.05;
+            }
+            50% { 
+                transform: scale(1.5); 
+                opacity: 0.1;
+            }
+        }
+        
+        /* Animación para el borde superior del footer */
+        @keyframes footerBorderGlow {
+            0% { 
+                opacity: 0.6; 
+                transform: scaleX(1);
+                box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+            }
+            100% { 
+                opacity: 1; 
+                transform: scaleX(1.02);
+                box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+            }
+        }
+        
+        /* Efectos hover para el footer */
+        .footer-link:hover {
+            color: #007BFF !important;
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: #007BFF !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover span {
+            color: #007BFF !important;
+            transition: color 0.3s ease;
+        }
+        
+        /* Footer con altura optimizada */
+        footer {
+            min-height: 250px !important;
+            max-height: none !important;
+            height: auto !important;
+        }
+        
+        /* Logo más prominente en el header */
+        .logo-img {
+            height: 180px !important;
+            filter: drop-shadow(0 6px 12px rgba(0, 123, 255, 0.3)) drop-shadow(0 0 20px rgba(0, 123, 255, 0.2)) !important;
+        }
+        
+        /* Botón de WhatsApp con color verde pero sin sombra y sin cuadrado */
+        .whatsapp-button {
+            background: #25D366 !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 50% !important;
+        }
+        
+        .whatsapp-button .whatsapp-icon {
+            background: #25D366 !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 50% !important;
+            color: white !important;
+        }
+        
+        .whatsapp-button:hover {
+            background: #128C7E !important;
+            box-shadow: none !important;
+            transform: scale(1.1) !important;
+        }
+        
+        .whatsapp-button:hover .whatsapp-icon {
+            background: #128C7E !important;
+            color: white !important;
+        }
+        
+        /* Estilos para el formulario de contacto */
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none !important;
+            border-color: #007BFF !important;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1) !important;
+        }
+        
+        .contact-form .submit-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4) !important;
+        }
+        
+        .contact-form .submit-btn:active {
+            transform: translateY(0) !important;
+        }
+        
+        /* Estilos para las categorías de servicios */
+        .service-category {
+            margin-bottom: 2rem;
+        }
+        
+        .category-title {
+            color: #007BFF;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .category-title i {
+            font-size: 1.2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+        }
+        
+        .service-card i {
+            font-size: 2.2rem;
+            color: #007BFF;
+            margin-bottom: 0.8rem;
+        }
+        
+        .service-card h4 {
+            color: #1e293b;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        
+        .service-card p {
+            color: #64748b;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        
+        .clickable-service {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .service-link {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 123, 255, 0.1);
+            border-radius: 6px;
+            color: #007BFF;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .clickable-service:hover .service-link {
+            background: #007BFF;
+            color: white;
+        }
+        
+        /* Efectos hover para los valores */
+        .value-item:hover {
+            transform: translateY(-5px) !important;
+            background: rgba(0, 123, 255, 0.1) !important;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15) !important;
+        }
+        
+        /* Responsive para la sección Quiénes Somos */
+        @media (max-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.2rem !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .vision-mission {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+        
+        /* Responsive para el footer */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .footer-logo-section {
+                grid-column: 1 / -1 !important;
+                text-align: center !important;
+                margin-bottom: 1rem !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .footer-logo-section {
+                text-align: center !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .social-links {
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+            }
+            
+            footer {
+                min-height: 280px !important;
+                max-height: none !important;
+                height: auto !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-content {
+                gap: 1rem !important;
+            }
+            
+            .footer-logo-section p {
+                font-size: 14px !important;
+            }
+            
+            .footer-contact {
+                padding: 0.8rem !important;
+            }
+            
+            .social-links {
+                gap: 0.5rem !important;
+            }
+            
+            footer {
+                min-height: 300px !important;
+                max-height: none !important;
+                height: auto !important;
+            }
+        }
+    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="header" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%); border-radius: 0 0 25px 25px; border-bottom: none; box-shadow: 0 10px 40px rgba(0, 123, 255, 0.15); position: relative; overflow: hidden; margin: 0; padding: 0; top: 0; left: 0; width: 100%; backdrop-filter: blur(10px);">
+        
+        <!-- Ráfagas de luz azul -->
+        <div class="light-bursts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+            <div class="burst burst1" style="position: absolute; top: 20%; left: -100px; width: 200px; height: 2px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove1 4s ease-in-out infinite;"></div>
+            <div class="burst burst2" style="position: absolute; top: 50%; right: -150px; width: 300px; height: 1px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove2 6s ease-in-out infinite;"></div>
+            <div class="burst burst3" style="position: absolute; top: 80%; left: -200px; width: 400px; height: 1.5px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove3 5s ease-in-out infinite;"></div>
+            <div class="burst burst4" style="position: absolute; top: 30%; right: -120px; width: 240px; height: 1px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: burstMove4 7s ease-in-out infinite;"></div>
+        </div>
+        
+        <!-- Efectos de resplandor sutil -->
+        <div class="glow-effects" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+            <div class="glow glow1" style="position: absolute; top: 10%; left: 20%; width: 60px; height: 60px; background: radial-gradient(circle, rgba(0, 123, 255, 0.1) 0%, transparent 70%); border-radius: 50%; animation: glowPulse1 8s ease-in-out infinite;"></div>
+            <div class="glow glow2" style="position: absolute; top: 60%; right: 25%; width: 40px; height: 40px; background: radial-gradient(circle, rgba(0, 123, 255, 0.08) 0%, transparent 70%); border-radius: 50%; animation: glowPulse2 10s ease-in-out infinite;"></div>
+            <div class="glow glow3" style="position: absolute; bottom: 20%; left: 60%; width: 30px; height: 30px; background: radial-gradient(circle, rgba(0, 123, 255, 0.06) 0%, transparent 70%); border-radius: 50%; animation: glowPulse3 12s ease-in-out infinite;"></div>
+        </div>
+        
+        <nav class="navbar" style="position: relative; z-index: 2;">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="logo 2,0.png" alt="Constructora Elite Sur" class="logo-img" onerror="this.src='logo-texto.png'">
+                    <img src="logo_tipo_Elit_Sur-removebg-preview.png" alt="ElitSur Constructora" class="logo-img" style="height: 180px; width: auto; background: transparent; border: none; filter: drop-shadow(0 6px 12px rgba(0, 123, 255, 0.3)) drop-shadow(0 0 20px rgba(0, 123, 255, 0.2)); transition: all 0.3s ease; animation: logoFloat 3s ease-in-out infinite;">
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
-                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="#proyectos-realizados" class="nav-link">Proyectos Realizados</a></li>
-                    <li><a href="#proyectos-finalizados" class="nav-link">Proyectos Finalizados</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="#inicio" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Inicio</a></li>
+                    <li><a href="#quienes-somos" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Quiénes Somos</a></li>
+                    <li><a href="#servicios" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Servicios</a></li>
+                    <li><a href="#proyectos-realizados" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Proyectos Realizados</a></li>
+                    <li><a href="#proyectos-finalizados" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Proyectos Finalizados</a></li>
+                    <li><a href="#contacto" class="nav-link" style="color: #ffffff; text-decoration: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Contacto</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -94,12 +723,15 @@
                 </div>
             </div>
         </nav>
+        
+        <!-- Borde inferior elegante con gradiente -->
+        <div class="header-bottom-border" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent 0%, rgba(0, 123, 255, 0.6) 20%, #007BFF 50%, rgba(0, 123, 255, 0.6) 80%, transparent 100%); animation: borderGlow 4s ease-in-out infinite alternate;"></div>
     </header>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Constructora S&D</h1>
+            <h1>Constructora Elite Sur</h1>
             <p>Construyendo el futuro con excelencia y compromiso</p>
             <a href="#contacto" class="cta-button">Contáctanos</a>
         </div>
@@ -108,97 +740,69 @@
     <!-- Quiénes Somos Section -->
     <section id="quienes-somos" class="about">
         <div class="container">
-            <h2>Quiénes Somos</h2>
-            <div class="about-content">
+            <h2 style="color: #007BFF; text-align: center; margin-bottom: 1.5rem;">Quiénes Somos</h2>
+            
+            <!-- Descripción de la empresa -->
+            <div class="about-intro" style="text-align: center; margin-bottom: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.95); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
+                <p style="color: #374151; font-size: 1.1rem; line-height: 1.7; max-width: 800px; margin: 0 auto;">Somos una empresa líder en el sector de la construcción, con más de 15 años de experiencia en el desarrollo de proyectos residenciales, comerciales e industriales en la Región de La Araucanía. Nuestro compromiso es construir espacios de excelencia que transformen la vida de las personas.</p>
+            </div>
+
+            <!-- Visión y Misión -->
+            <div class="vision-mission" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <!-- Misión (izquierda) -->
+                <div class="mission" style="background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 86, 179, 0.05)); padding: 2rem; border-radius: 20px; box-shadow: 0 15px 40px rgba(0, 123, 255, 0.15); backdrop-filter: blur(15px); text-align: center; border: 2px solid rgba(0, 123, 255, 0.2); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: linear-gradient(135deg, #007BFF, #0056b3); border-radius: 50%; opacity: 0.1;"></div>
+                    <div style="background: linear-gradient(135deg, #007BFF, #0056b3); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.6rem; box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 style="color: #007BFF; font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Misión</h3>
+                    <p style="color: #374151; line-height: 1.6; font-size: 1rem; font-weight: 500;">Construir espacios de excelencia que transformen la vida de las personas, utilizando tecnología de punta y materiales de primera calidad.</p>
+                </div>
                 
-                <!-- Introducción -->
-                <div class="about-intro">
-                    <p>Constructora S&D es una empresa líder en el sector de la construcción, con más de 15 años de experiencia en el desarrollo de proyectos residenciales, comerciales e industriales en la Región de La Araucanía.</p>
+                <!-- Visión (derecha) -->
+                <div class="vision" style="background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 86, 179, 0.05)); padding: 2rem; border-radius: 20px; box-shadow: 0 15px 40px rgba(0, 123, 255, 0.15); backdrop-filter: blur(15px); text-align: center; border: 2px solid rgba(0, 123, 255, 0.2); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: linear-gradient(135deg, #007BFF, #0056b3); border-radius: 50%; opacity: 0.1;"></div>
+                    <div style="background: linear-gradient(135deg, #007BFF, #0056b3); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.6rem; box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 style="color: #007BFF; font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Visión</h3>
+                    <p style="color: #374151; line-height: 1.6; font-size: 1rem; font-weight: 500;">Ser la constructora líder en el sur de Chile, reconocida por nuestra innovación, calidad excepcional y compromiso con el desarrollo sostenible.</p>
                 </div>
+            </div>
 
-                <!-- Estadísticas -->
-                <div class="stats-section">
-                    <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Años de Experiencia</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">200+</div>
-                        <div class="stat-label">Proyectos Completados</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Profesionales</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Satisfacción del Cliente</div>
-                    </div>
-                </div>
-
-                <!-- Visión y Misión -->
-                <div class="vision-mission">
-                    <div class="vision">
-                        <h3><i class="fas fa-eye"></i> Visión</h3>
-                        <p>Ser la constructora líder en el sur de Chile, reconocida por nuestra innovación, calidad excepcional y compromiso con el desarrollo sostenible.</p>
-                    </div>
-                    <div class="mission">
-                        <h3><i class="fas fa-bullseye"></i> Misión</h3>
-                        <p>Construir espacios de excelencia que transformen la vida de las personas, utilizando tecnología de punta y materiales de primera calidad.</p>
-                    </div>
-                </div>
-
-                <!-- Valores -->
-                <div class="values-section">
-                    <h3>Nuestros Valores</h3>
-                    <div class="values-grid">
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <h4>Excelencia</h4>
-                            <p>Buscamos la perfección en cada detalle, superando las expectativas de nuestros clientes.</p>
+            <!-- Valores -->
+            <div class="values-section" style="background: rgba(255, 255, 255, 0.95); padding: 1.5rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
+                <h3 style="color: #007BFF; font-size: 1.6rem; font-weight: 600; text-align: center; margin-bottom: 1.5rem;">Nuestros Valores</h3>
+                <div class="values-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                    <div class="value-item" style="text-align: center; padding: 1.2rem; background: rgba(0, 123, 255, 0.05); border-radius: 12px; transition: all 0.3s ease;">
+                        <div class="value-icon" style="background: linear-gradient(135deg, #007BFF, #0056b3); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; font-size: 1.1rem;">
+                            <i class="fas fa-award"></i>
                         </div>
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h4>Compromiso</h4>
-                            <p>Mantenemos nuestra palabra y cumplimos con los plazos establecidos.</p>
+                        <h4 style="color: #1e293b; font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem;">Excelencia</h4>
+                        <p style="color: #64748b; line-height: 1.4; font-size: 0.9rem;">Buscamos la perfección en cada detalle, superando las expectativas de nuestros clientes.</p>
+                    </div>
+                    <div class="value-item" style="text-align: center; padding: 1.2rem; background: rgba(0, 123, 255, 0.05); border-radius: 12px; transition: all 0.3s ease;">
+                        <div class="value-icon" style="background: linear-gradient(135deg, #007BFF, #0056b3); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; font-size: 1.1rem;">
+                            <i class="fas fa-handshake"></i>
                         </div>
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h4>Sostenibilidad</h4>
-                            <p>Construimos pensando en el futuro, utilizando tecnologías eco-amigables.</p>
+                        <h4 style="color: #1e293b; font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem;">Compromiso</h4>
+                        <p style="color: #64748b; line-height: 1.4; font-size: 0.9rem;">Mantenemos nuestra palabra y cumplimos con los plazos establecidos.</p>
+                    </div>
+                    <div class="value-item" style="text-align: center; padding: 1.2rem; background: rgba(0, 123, 255, 0.05); border-radius: 12px; transition: all 0.3s ease;">
+                        <div class="value-icon" style="background: linear-gradient(135deg, #007BFF, #0056b3); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; font-size: 1.1rem;">
+                            <i class="fas fa-leaf"></i>
                         </div>
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4>Seguridad</h4>
-                            <p>Priorizamos la seguridad de nuestros trabajadores en cada proyecto.</p>
+                        <h4 style="color: #1e293b; font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem;">Sostenibilidad</h4>
+                        <p style="color: #64748b; line-height: 1.4; font-size: 0.9rem;">Construimos pensando en el futuro, utilizando tecnologías eco-amigables.</p>
+                    </div>
+                    <div class="value-item" style="text-align: center; padding: 1.2rem; background: rgba(0, 123, 255, 0.05); border-radius: 12px; transition: all 0.3s ease;">
+                        <div class="value-icon" style="background: linear-gradient(135deg, #007BFF, #0056b3); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; font-size: 1.1rem;">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
+                        <h4 style="color: #1e293b; font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem;">Seguridad</h4>
+                        <p style="color: #64748b; line-height: 1.4; font-size: 0.9rem;">Priorizamos la seguridad de nuestros trabajadores en cada proyecto.</p>
                     </div>
                 </div>
-
-                <!-- Equipo -->
-                <div class="team-section">
-                    <h3>Nuestro Equipo</h3>
-                    <p>Contamos con más de 50 profesionales altamente capacitados, incluyendo ingenieros civiles, arquitectos y técnicos especializados.</p>
-                    
-                    <div class="certifications">
-                        <h4>Certificaciones</h4>
-                        <div class="cert-list">
-                            <span class="cert-item">ISO 9001:2015</span>
-                            <span class="cert-item">ISO 14001:2015</span>
-                            <span class="cert-item">OHSAS 18001</span>
-                            <span class="cert-item">Premio Excelencia 2023</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -207,45 +811,90 @@
     <section id="servicios" class="services">
         <div class="container">
             <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
+            
+            <!-- 🏗️ Construcción -->
+            <div class="service-category">
+                <h3 class="category-title">
+                    <i class="fas fa-hammer"></i>
+                    Construcción
+                </h3>
+                <div class="services-grid">
+                <div class="service-card clickable-service" onclick="window.location.href='construccion-residencial.html'">
                     <i class="fas fa-home"></i>
-                    <h3>Construcción Residencial</h3>
-                    <p>Casas, departamentos y complejos habitacionales con diseño moderno y funcional.</p>
+                        <h4>Residencial</h4>
+                        <p>Creamos casas, departamentos y complejos habitacionales con diseños modernos, funcionales y de alta calidad.</p>
+                    <div class="service-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Ver Detalles</span>
+                    </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card clickable-service" onclick="window.location.href='construccion-comercial.html'">
                     <i class="fas fa-building"></i>
-                    <h3>Construcción Comercial</h3>
-                    <p>Oficinas, centros comerciales y espacios comerciales adaptados a tus necesidades.</p>
+                        <h4>Comercial</h4>
+                        <p>Desarrollamos oficinas, locales y centros comerciales adaptados a las necesidades de tu negocio.</p>
+                    <div class="service-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Ver Detalles</span>
+                    </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card clickable-service" onclick="window.location.href='construccion-industrial.html'">
                     <i class="fas fa-industry"></i>
-                    <h3>Construcción Industrial</h3>
-                    <p>Plantas industriales, bodegas y complejos manufactureros de gran escala.</p>
+                        <h4>Industrial</h4>
+                        <p>Construimos plantas, bodegas y complejos manufactureros de gran escala, garantizando eficiencia y seguridad.</p>
+                    <div class="service-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Ver Detalles</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- ⚡ Servicios Especializados -->
+            <div class="service-category">
+                <h3 class="category-title">
+                    <i class="fas fa-bolt"></i>
+                    Servicios Especializados
+                </h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Instalaciones Eléctricas</h4>
+                        <p>Diseño, instalación y mantenimiento de sistemas eléctricos residenciales, comerciales e industriales, cumpliendo con normativas y garantizando seguridad y eficiencia energética.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-tools"></i>
-                    <h3>Remodelaciones</h3>
-                    <p>Transformamos espacios existentes con diseños innovadores y funcionales.</p>
+                        <h4>Remodelaciones</h4>
+                        <p>Transformamos y renovamos espacios existentes con propuestas innovadoras, funcionales y de alto impacto estético.</p>
                 </div>
                 <div class="service-card clickable-service" onclick="window.location.href='movimiento-tierra.html'">
                     <i class="fas fa-tractor"></i>
-                    <h3>Movimiento de Tierra</h3>
-                    <p>Servicios especializados de excavación, nivelación, compactación y preparación de terrenos para construcción.</p>
+                        <h4>Movimiento de Tierra</h4>
+                        <p>Excavación, nivelación, compactación y preparación de terrenos con maquinaria especializada y personal calificado.</p>
                     <div class="service-link">
                         <i class="fas fa-external-link-alt"></i>
                         <span>Ver Servicios</span>
                     </div>
                 </div>
+                </div>
+            </div>
+
+            <!-- 📐 Servicios Profesionales -->
+            <div class="service-category">
+                <h3 class="category-title">
+                    <i class="fas fa-drafting-compass"></i>
+                    Servicios Profesionales
+                </h3>
+                <div class="services-grid">
                 <div class="service-card">
                     <i class="fas fa-drafting-compass"></i>
-                    <h3>Diseño Arquitectónico</h3>
-                    <p>Servicios de diseño y planificación arquitectónica personalizada.</p>
+                        <h4>Diseño Arquitectónico</h4>
+                        <p>Soluciones personalizadas de diseño y planificación arquitectónica para materializar tus ideas.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-hard-hat"></i>
-                    <h3>Consultoría</h3>
-                    <p>Asesoría especializada en proyectos de construcción y gestión de obras.</p>
+                        <h4>Consultoría</h4>
+                        <p>Asesoría experta en gestión de obras y desarrollo de proyectos de construcción.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -257,7 +906,7 @@
             <h2>Proyectos en Desarrollo</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="images/proyecto1.jpg" alt="Proyecto Residencial Norte">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop&crop=center" alt="Proyecto Residencial Norte" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Proyecto+Residencial'">
                     <div class="project-info">
                         <h3>Residencial Norte</h3>
                         <p>Complejo habitacional de 120 departamentos con áreas verdes y amenities.</p>
@@ -265,7 +914,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/proyecto2.jpg" alt="Centro Comercial Plaza">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center" alt="Centro Comercial Plaza" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Centro+Comercial'">
                     <div class="project-info">
                         <h3>Centro Comercial Plaza</h3>
                         <p>Moderno centro comercial con 50 locales comerciales y estacionamiento.</p>
@@ -273,23 +922,11 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/proyecto3.jpg" alt="Planta Industrial">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center" alt="Planta Industrial" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Planta+Industrial'">
                     <div class="project-info">
                         <h3>Planta Industrial Sur</h3>
                         <p>Complejo industrial de 5,000 m² para manufactura especializada.</p>
                         <span class="project-status">En Progreso</span>
-                    </div>
-                </div>
-                <div class="project-card clickable-project" onclick="window.location.href='remodelacion-bano.html'">
-                    <img src="images/remodelacion-bano.jpg" alt="Remodelación de Baño">
-                    <div class="project-info">
-                        <h3>Remodelación de Baño Premium</h3>
-                        <p>Renovación completa de baño con materiales de primera calidad y diseño moderno.</p>
-                        <span class="project-status">En Progreso</span>
-                        <div class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Ver Detalles</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -333,281 +970,190 @@
     <section id="contacto" class="contact">
         <div class="container">
             <h2>Contacto</h2>
-            <div class="contact-content">
+            <div class="contact-content" style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
                 <div class="contact-info">
-                    <div class="contact-header">
-                        <h3>¡Hablemos de tu proyecto!</h3>
-                        <p>Estamos aquí para ayudarte a hacer realidad tus ideas de construcción</p>
+                    <!-- Información de contacto eliminada -->
                     </div>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                <form id="contactForm" class="contact-form" action="contact-form.php" method="POST" style="max-width: 600px; width: 100%; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
+                    <div class="form-header" style="text-align: center; margin-bottom: 2rem;">
+                        <h3 style="color: #1e293b; font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">Envíanos un Mensaje</h3>
+                        <p style="color: #64748b; font-size: 1rem; line-height: 1.5;">Completa el formulario y nos pondremos en contacto contigo</p>
                             </div>
-                            <div class="contact-details">
-                                <h4>Dirección</h4>
-                                <p>Av. Principal 1234<br>Villarrica, Región de La Araucanía<br>Chile</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Teléfono</h4>
-                                <p>+56 9 8765 4321<br>+56 45 2345 6789</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <p>contacto@constructorasd.cl<br>ventas@constructorasd.cl</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Horarios</h4>
-                                <p>Lunes a Viernes: 8:00 - 18:00<br>Sábados: 9:00 - 14:00</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>WhatsApp</h4>
-                                <p>+56 9 8765 4321<br><span class="whatsapp-status">Disponible 24/7</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-header">
-                        <h3>Envíanos un Mensaje</h3>
-                        <p>Completa el formulario y nos pondremos en contacto contigo</p>
-                    </div>
-                    <div class="form-row">
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                         <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                            <label for="nombre" style="display: block; color: #374151; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9rem;">Nombre completo *</label>
+                            <input type="text" id="nombre" placeholder="Tu nombre completo" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; background: #ffffff;">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" placeholder="tu@email.com" required>
+                            <label for="email" style="display: block; color: #374151; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9rem;">Email *</label>
+                            <input type="email" id="email" placeholder="tu@email.com" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; background: #ffffff;">
                         </div>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" placeholder="+56 9 1234 5678">
+                            <label for="telefono" style="display: block; color: #374151; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9rem;">Teléfono</label>
+                            <input type="tel" id="telefono" placeholder="+56 9 1234 5678" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; background: #ffffff;">
                         </div>
                         <div class="form-group">
-                            <label for="servicio">Servicio de interés *</label>
-                            <select id="servicio" required>
+                            <label for="servicio" style="display: block; color: #374151; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9rem;">Servicio de interés *</label>
+                            <select id="servicio" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; background: #ffffff;">
                                 <option value="">Selecciona un servicio</option>
-                                <option value="residencial">Construcción Residencial</option>
-                                <option value="comercial">Construcción Comercial</option>
-                                <option value="industrial">Construcción Industrial</option>
-                                <option value="remodelacion">Remodelaciones</option>
-                                <option value="remodelacion-bano">Remodelación de Baño</option>
-                                <option value="diseno">Diseño Arquitectónico</option>
-                                <option value="consultoria">Consultoría</option>
+                                <optgroup label="🏗️ Construcción">
+                                    <option value="residencial">Construcción Residencial</option>
+                                    <option value="comercial">Construcción Comercial</option>
+                                    <option value="industrial">Construcción Industrial</option>
+                                </optgroup>
+                                <optgroup label="⚡ Servicios Especializados">
+                                    <option value="instalaciones-electricas">Instalaciones Eléctricas</option>
+                                    <option value="remodelaciones">Remodelaciones</option>
+                                    <option value="movimiento-tierra">Movimiento de Tierra</option>
+                                </optgroup>
+                                <optgroup label="📐 Servicios Profesionales">
+                                    <option value="diseno-arquitectonico">Diseño Arquitectónico</option>
+                                    <option value="consultoria">Consultoría</option>
+                                </optgroup>
+                                <optgroup label="🔧 Otros Servicios">
+                                    <option value="mantenimiento">Mantenimiento</option>
+                                    <option value="reparaciones">Reparaciones</option>
+                                    <option value="asesoria">Asesoría Técnica</option>
+                                </optgroup>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="mensaje" style="display: block; color: #374151; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9rem;">Mensaje *</label>
+                        <textarea id="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; background: #ffffff; resize: vertical; min-height: 120px;"></textarea>
                     </div>
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn">
+                    <div class="form-actions" style="text-align: center;">
+                        <button type="submit" id="submitBtn" class="submit-btn" style="background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%); color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); display: inline-flex; align-items: center; gap: 0.5rem;">
                             <i class="fas fa-paper-plane"></i>
-                            Enviar Mensaje
-                        </button>
-                        <button type="button" class="whatsapp-btn" onclick="openWhatsApp()">
-                            <i class="fab fa-whatsapp"></i>
-                            WhatsApp
+                            <span id="submitText">Enviar Mensaje</span>
                         </button>
                     </div>
+                    
+                    <!-- Mensaje de estado -->
+                    <div id="formMessage" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center; display: none;"></div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Chatbot -->
-    <div id="chatbot" class="chatbot">
-        <div class="chatbot-toggle" onclick="toggleChatbot()">
-            <i class="fas fa-comments"></i>
-            <span class="chatbot-badge">1</span>
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button" onclick="openWhatsApp()">
+        <div class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
         </div>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <div class="chatbot-avatar">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="chatbot-info">
-                    <h4>Asistente S&D</h4>
-                    <p>En línea</p>
-                </div>
-                <button class="chatbot-close" onclick="toggleChatbot()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot-message">
-                    <div class="message-content">
-                        <p>¡Hola! 👋 Soy el asistente de Constructora S&D. ¿En qué puedo ayudarte hoy?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Escribe tu mensaje..." onkeypress="handleChatbotKeypress(event)">
-                <button onclick="sendChatbotMessage()">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
+        <div class="whatsapp-tooltip">
+            <span>¡Escríbenos por WhatsApp!</span>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-background">
-            <div class="footer-particles"></div>
-            <div class="footer-waves"></div>
+    <footer class="footer" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(51, 65, 85, 0.98) 100%); border-radius: 25px 25px 0 0; border-top: none; box-shadow: 0 -10px 40px rgba(0, 123, 255, 0.15); position: relative; overflow: hidden; margin: 0; padding: 0; backdrop-filter: blur(10px);">
+        
+        <!-- Ráfagas de luz azul para el footer -->
+        <div class="footer-light-bursts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+            <div class="footer-burst footer-burst1" style="position: absolute; top: 20%; left: -100px; width: 200px; height: 2px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: footerBurstMove1 5s ease-in-out infinite;"></div>
+            <div class="footer-burst footer-burst2" style="position: absolute; top: 50%; right: -150px; width: 300px; height: 1px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: footerBurstMove2 7s ease-in-out infinite;"></div>
+            <div class="footer-burst footer-burst3" style="position: absolute; top: 80%; left: -200px; width: 400px; height: 1.5px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: footerBurstMove3 6s ease-in-out infinite;"></div>
+            <div class="footer-burst footer-burst4" style="position: absolute; top: 30%; right: -120px; width: 240px; height: 1px; background: linear-gradient(90deg, transparent 0%, #007BFF 50%, transparent 100%); animation: footerBurstMove4 8s ease-in-out infinite;"></div>
         </div>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section footer-main">
-                    <div class="footer-logo-container">
+        
+        <!-- Efectos de resplandor sutil para el footer -->
+        <div class="footer-glow-effects" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+            <div class="footer-glow footer-glow1" style="position: absolute; top: 15%; left: 25%; width: 50px; height: 50px; background: radial-gradient(circle, rgba(0, 123, 255, 0.08) 0%, transparent 70%); border-radius: 50%; animation: footerGlowPulse1 9s ease-in-out infinite;"></div>
+            <div class="footer-glow footer-glow2" style="position: absolute; top: 65%; right: 30%; width: 35px; height: 35px; background: radial-gradient(circle, rgba(0, 123, 255, 0.06) 0%, transparent 70%); border-radius: 50%; animation: footerGlowPulse2 11s ease-in-out infinite;"></div>
+            <div class="footer-glow footer-glow3" style="position: absolute; bottom: 25%; left: 70%; width: 25px; height: 25px; background: radial-gradient(circle, rgba(0, 123, 255, 0.05) 0%, transparent 70%); border-radius: 50%; animation: footerGlowPulse3 13s ease-in-out infinite;"></div>
+        </div>
+        <div class="container" style="position: relative; z-index: 2; padding: 1.5rem 1rem 2rem 1rem; max-width: 1200px; margin: 0 auto;">
+            <!-- Layout de 4 columnas: Logo + 3 secciones -->
+            <div class="footer-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2rem; align-items: start;">
+                
+                <!-- 1️⃣ Logo al lado izquierdo -->
+                <div class="footer-logo-section" style="text-align: left;">
+                    <div class="footer-logo-container" style="margin-bottom: 1rem;">
                         <div class="logo">
-                            <img src="logo 2,0.png" alt="Constructora Elite Sur" class="logo-img" onerror="this.src='logo-texto.png'">
-                        </div>
-                        <div class="footer-logo-glow"></div>
-                    </div>
-                    <p class="footer-description">Construyendo el futuro con excelencia y compromiso desde 2008. Transformamos espacios en realidades extraordinarias.</p>
-                    <div class="footer-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Años</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">200+</span>
-                            <span class="stat-label">Proyectos</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Satisfacción</span>
+                            <img src="logo_tipo_Elit_Sur-removebg-preview.png" alt="Constructora Elite Sur" class="logo-img" style="height: 80px; width: auto; background: transparent; border: none; filter: drop-shadow(0 4px 8px rgba(0, 123, 255, 0.2));">
                         </div>
                     </div>
+                    <p style="color: #e2e8f0; font-size: 15px; font-weight: 500; line-height: 1.4; margin: 0;">Construyendo el futuro con excelencia y compromiso desde 2008.</p>
                 </div>
                 
+                <!-- 🔹 Enlaces Rápidos -->
                 <div class="footer-section">
-                    <h3 class="footer-title">
+                    <h3 class="footer-title" style="color: #007BFF; font-size: 17px; font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
                         <i class="fas fa-link"></i>
                         Enlaces Rápidos
                     </h3>
-                    <ul class="footer-links">
-                        <li><a href="#inicio" class="footer-link"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li><a href="#quienes-somos" class="footer-link"><i class="fas fa-users"></i> Quiénes Somos</a></li>
-                        <li><a href="#servicios" class="footer-link"><i class="fas fa-tools"></i> Servicios</a></li>
-                        <li><a href="#proyectos-realizados" class="footer-link"><i class="fas fa-building"></i> Proyectos</a></li>
-                        <li><a href="#contacto" class="footer-link"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <ul class="footer-links" style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#inicio" class="footer-link" style="color: #e2e8f0; text-decoration: none; font-size: 14px; display: block; transition: color 0.3s ease;">Inicio</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#quienes-somos" class="footer-link" style="color: #e2e8f0; text-decoration: none; font-size: 14px; display: block; transition: color 0.3s ease;">Quiénes Somos</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#servicios" class="footer-link" style="color: #e2e8f0; text-decoration: none; font-size: 14px; display: block; transition: color 0.3s ease;">Servicios</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#proyectos-realizados" class="footer-link" style="color: #e2e8f0; text-decoration: none; font-size: 14px; display: block; transition: color 0.3s ease;">Proyectos</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#contacto" class="footer-link" style="color: #e2e8f0; text-decoration: none; font-size: 14px; display: block; transition: color 0.3s ease;">Contacto</a></li>
                     </ul>
                 </div>
                 
+                <!-- 🔹 Contacto -->
                 <div class="footer-section">
-                    <h3 class="footer-title">
-                        <i class="fas fa-cogs"></i>
-                        Nuestros Servicios
+                    <h3 class="footer-title" style="color: #007BFF; font-size: 17px; font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-phone"></i>
+                        Contacto
                     </h3>
-                    <ul class="footer-services">
-                        <li class="service-item">
-                            <i class="fas fa-home"></i>
-                            <span>Construcción Residencial</span>
-                        </li>
-                        <li class="service-item">
-                            <i class="fas fa-building"></i>
-                            <span>Construcción Comercial</span>
-                        </li>
-                        <li class="service-item">
-                            <i class="fas fa-industry"></i>
-                            <span>Construcción Industrial</span>
-                        </li>
-                        <li class="service-item">
-                            <i class="fas fa-tractor"></i>
-                            <span>Movimiento de Tierra</span>
-                        </li>
-                        <li class="service-item">
-                            <i class="fas fa-tools"></i>
-                            <span>Remodelaciones</span>
-                        </li>
-                    </ul>
+                    <div class="footer-contact" style="background: rgba(0, 123, 255, 0.08); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(0, 123, 255, 0.15);">
+                        <div class="contact-item" style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fas fa-phone" style="color: #007BFF; font-size: 0.9rem;"></i>
+                            <span style="color: #ffffff; font-weight: 500; font-size: 14px;">+56 9 4808 8573</span>
+                        </div>
+                        <div class="contact-item" style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fas fa-envelope" style="color: #007BFF; font-size: 0.9rem;"></i>
+                            <span style="color: #ffffff; font-weight: 500; font-size: 14px;">info@constructoraelitsur.cl</span>
+                        </div>
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #007BFF; font-size: 0.9rem;"></i>
+                            <span style="color: #ffffff; font-weight: 500; font-size: 14px;">Villarrica, La Araucanía</span>
+                        </div>
+                    </div>
                 </div>
                 
+                <!-- 🔹 Síguenos -->
                 <div class="footer-section">
-                    <h3 class="footer-title">
+                    <h3 class="footer-title" style="color: #007BFF; font-size: 17px; font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
                         <i class="fas fa-share-alt"></i>
                         Síguenos
                     </h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link facebook">
-                            <i class="fab fa-facebook"></i>
+                    <div class="social-links" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <a href="https://www.facebook.com/constructoraelitsur" target="_blank" class="social-link facebook" title="Facebook" style="display: flex; align-items: center; gap: 0.6rem; color: #e2e8f0; text-decoration: none; font-size: 14px; transition: color 0.3s ease; padding: 0.4rem; border-radius: 6px; background: rgba(0, 123, 255, 0.05);">
+                            <i class="fab fa-facebook" style="color: #007BFF; font-size: 0.9rem;"></i>
                             <span>Facebook</span>
                         </a>
-                        <a href="#" class="social-link instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/constructoraelitsur" target="_blank" class="social-link instagram" title="Instagram" style="display: flex; align-items: center; gap: 0.6rem; color: #e2e8f0; text-decoration: none; font-size: 14px; transition: color 0.3s ease; padding: 0.4rem; border-radius: 6px; background: rgba(0, 123, 255, 0.05);">
+                            <i class="fab fa-instagram" style="color: #007BFF; font-size: 0.9rem;"></i>
                             <span>Instagram</span>
                         </a>
-                        <a href="#" class="social-link linkedin">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/company/constructora-elite-sur" target="_blank" class="social-link linkedin" title="LinkedIn" style="display: flex; align-items: center; gap: 0.6rem; color: #e2e8f0; text-decoration: none; font-size: 14px; transition: color 0.3s ease; padding: 0.4rem; border-radius: 6px; background: rgba(0, 123, 255, 0.05);">
+                            <i class="fab fa-linkedin" style="color: #007BFF; font-size: 0.9rem;"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="#" class="social-link youtube">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://www.youtube.com/@constructoraelitsur" target="_blank" class="social-link youtube" title="YouTube" style="display: flex; align-items: center; gap: 0.6rem; color: #e2e8f0; text-decoration: none; font-size: 14px; transition: color 0.3s ease; padding: 0.4rem; border-radius: 6px; background: rgba(0, 123, 255, 0.05);">
+                            <i class="fab fa-youtube" style="color: #007BFF; font-size: 0.9rem;"></i>
                             <span>YouTube</span>
                         </a>
-                    </div>
-                    
-                    <div class="footer-contact" style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; margin-top: 2rem;">
-                        <h4 style="color: #4dabf7 !important; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5); margin-bottom: 1rem;">Contacto Directo</h4>
-                        <div class="contact-item" style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 5px; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.8rem;">
-                            <i class="fas fa-phone" style="color: #4dabf7 !important; font-size: 1rem;"></i>
-                            <span style="color: #ffffff !important; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">+56 9 1234 5678</span>
-                        </div>
-                        <div class="contact-item" style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 5px; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.8rem;">
-                            <i class="fas fa-envelope" style="color: #4dabf7 !important; font-size: 1rem;"></i>
-                            <span style="color: #ffffff !important; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">info@constructorasd.cl</span>
-                        </div>
-                        <div class="contact-item" style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 5px; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.8rem;">
-                            <i class="fas fa-map-marker-alt" style="color: #4dabf7 !important; font-size: 1rem;"></i>
-                            <span style="color: #ffffff !important; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Villarrica, La Araucanía</span>
-                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
+            <div class="footer-bottom" style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(0, 123, 255, 0.2);">
+                <div class="footer-bottom-content" style="text-align: center;">
                     <div class="footer-copyright">
-                        <p>&copy; 2024 Constructora S&D. Todos los derechos reservados.</p>
+                        <p style="color: #94a3b8; font-size: 12px; margin: 0;">&copy; 2024 Constructora Elite Sur. Todos los derechos reservados.</p>
                     </div>
-                    <div class="footer-legal">
-                        <a href="#" class="legal-link">Política de Privacidad</a>
-                        <a href="#" class="legal-link">Términos y Condiciones</a>
-                        <a href="#" class="legal-link">Cookies</a>
                     </div>
                 </div>
-                <div class="footer-scroll-indicator">
-                    <div class="scroll-line"></div>
                 </div>
-            </div>
-        </div>
+        
+        <!-- Borde superior elegante con gradiente -->
+        <div class="footer-top-border" style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent 0%, rgba(0, 123, 255, 0.6) 20%, #007BFF 50%, rgba(0, 123, 255, 0.6) 80%, transparent 100%); animation: footerBorderGlow 4s ease-in-out infinite alternate;"></div>
     </footer>
 
     <!-- Google Analytics -->
@@ -620,5 +1166,67 @@
     </script>
     
     <script src="script.js"></script>
+    
+    <!-- Script para manejar el formulario de contacto -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Cambiar estado del botón
+            submitBtn.disabled = true;
+            submitText.textContent = 'Enviando...';
+            submitBtn.style.opacity = '0.7';
+            
+            // Ocultar mensaje anterior
+            formMessage.style.display = 'none';
+            
+            // Crear FormData
+            const formData = new FormData(this);
+            
+            // Enviar datos
+            fetch('contact-form.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Mostrar mensaje
+                formMessage.style.display = 'block';
+                
+                if (data.success) {
+                    formMessage.style.backgroundColor = '#d4edda';
+                    formMessage.style.color = '#155724';
+                    formMessage.style.border = '1px solid #c3e6cb';
+                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+                    
+                    // Limpiar formulario
+                    document.getElementById('contactForm').reset();
+                } else {
+                    formMessage.style.backgroundColor = '#f8d7da';
+                    formMessage.style.color = '#721c24';
+                    formMessage.style.border = '1px solid #f5c6cb';
+                    formMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + data.message;
+                }
+            })
+            .catch(error => {
+                // Error de red
+                formMessage.style.display = 'block';
+                formMessage.style.backgroundColor = '#f8d7da';
+                formMessage.style.color = '#721c24';
+                formMessage.style.border = '1px solid #f5c6cb';
+                formMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error de conexión. Por favor, inténtalo de nuevo.';
+            })
+            .finally(() => {
+                // Restaurar botón
+                submitBtn.disabled = false;
+                submitText.textContent = 'Enviar Mensaje';
+                submitBtn.style.opacity = '1';
+            });
+        });
+    </script>
 </body>
 </html>
