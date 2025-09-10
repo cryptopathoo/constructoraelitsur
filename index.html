@@ -1227,6 +1227,27 @@
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         }
+        
+        // Debug de imágenes de fondo
+        function testBackgroundImages() {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const computedStyle = window.getComputedStyle(hero);
+                const backgroundImage = computedStyle.backgroundImage;
+                console.log('🖼️ Imagen de fondo del hero:', backgroundImage);
+                
+                if (backgroundImage === 'none' || !backgroundImage.includes('url')) {
+                    console.log('❌ No se detectó imagen de fondo');
+                    // Aplicar fallback manual
+                    hero.style.background = 'linear-gradient(135deg, #2c5530 0%, #4a7c59 50%, #1a1a1a 100%)';
+                } else {
+                    console.log('✅ Imagen de fondo detectada correctamente');
+                }
+            }
+        }
+        
+        // Ejecutar test después de cargar
+        window.addEventListener('load', testBackgroundImages);
     </script>
     
     <!-- Script para manejar el formulario de contacto -->
