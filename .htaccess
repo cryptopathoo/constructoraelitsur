@@ -32,6 +32,23 @@ ErrorDocument 500 /404.html
     AddType image/webp .webp
     AddType application/manifest+json .webmanifest
     AddType application/json .json
+    
+    # Tipos MIME para imágenes
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png .png
+    AddType image/gif .gif
+    AddType image/webp .webp
+    AddType image/svg+xml .svg
+</IfModule>
+
+# Reglas específicas para imágenes
+<IfModule mod_rewrite.c>
+    # Permitir acceso directo a imágenes
+    RewriteCond %{REQUEST_FILENAME} \.(jpg|jpeg|png|gif|webp|svg)$ [NC]
+    RewriteRule ^(.*)$ - [L]
+    
+    # Fallback para imágenes con espacios en el nombre
+    RewriteRule ^LOGO%20SIN%20FONDO\.png$ "LOGO SIN FONDO.png" [L]
 </IfModule>
 
 # Compresión GZIP

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Imágenes - Constructora Elite Sur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .image-test {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .image-test h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .image-test img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .hero-test {
+            height: 300px;
+            background: url('images/hero-desktop.jpg') center/cover no-repeat;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🖼️ Test de Carga de Imágenes - Constructora Elite Sur</h1>
+        
+        <div class="image-test">
+            <h3>1. Logo Principal</h3>
+            <img src="LOGO SIN FONDO.png" alt="Logo Constructora Elite Sur" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+            <div id="logo-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>2. Imagen Hero Desktop</h3>
+            <img src="images/hero-desktop.jpg" alt="Hero Desktop" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+            <div id="hero-desktop-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>3. Imagen Hero Mobile</h3>
+            <img src="images/hero-mobile.jpg" alt="Hero Mobile" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+            <div id="hero-mobile-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>4. Proyecto 1</h3>
+            <img src="images/proyecto1.jpg" alt="Proyecto 1" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+            <div id="proyecto1-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>5. Proyecto 2</h3>
+            <img src="images/proyecto2.jpg" alt="Proyecto 2" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+            <div id="proyecto2-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>6. Proyecto 3</h3>
+            <img src="images/proyecto3.jpg" alt="Proyecto 3" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+            <div id="proyecto3-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>7. Test de Fondo Hero (CSS)</h3>
+            <div class="hero-test">
+                Imagen de Fondo Hero
+            </div>
+            <div id="hero-bg-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>8. Resumen de Estado</h3>
+            <div id="summary"></div>
+        </div>
+    </div>
+
+    <script>
+        let loadedImages = 0;
+        let totalImages = 6;
+
+        function showStatus(img, status) {
+            const imgName = img.alt || img.src.split('/').pop();
+            const statusDiv = document.getElementById(imgName.toLowerCase().replace(/\s+/g, '-') + '-status');
+            
+            if (statusDiv) {
+                statusDiv.innerHTML = `<div class="status ${status}">${status === 'success' ? '✅ Cargada correctamente' : '❌ Error al cargar'}</div>`;
+            }
+
+            if (status === 'success') {
+                loadedImages++;
+            }
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const summary = document.getElementById('summary');
+            const percentage = Math.round((loadedImages / totalImages) * 100);
+            
+            summary.innerHTML = `
+                <div class="status ${loadedImages === totalImages ? 'success' : 'error'}">
+                    📊 Estado: ${loadedImages}/${totalImages} imágenes cargadas (${percentage}%)
+                </div>
+            `;
+        }
+
+        // Test del fondo hero
+        window.onload = function() {
+            const heroTest = document.querySelector('.hero-test');
+            const computedStyle = window.getComputedStyle(heroTest);
+            const backgroundImage = computedStyle.backgroundImage;
+            
+            const heroStatus = document.getElementById('hero-bg-status');
+            if (backgroundImage && backgroundImage !== 'none' && backgroundImage.includes('url')) {
+                heroStatus.innerHTML = '<div class="status success">✅ Fondo hero cargado correctamente</div>';
+            } else {
+                heroStatus.innerHTML = '<div class="status error">❌ Error en el fondo hero</div>';
+            }
+        };
+    </script>
+</body>
+</html>
