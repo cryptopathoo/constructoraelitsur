@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructora Elite Sur | Construcción Villarrica</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Constructora Elite Sur - Especialistas en construcción residencial, comercial e industrial en Villarrica. Movimiento de tierra, remodelaciones y proyectos de excelencia. Presupuestos gratuitos.">
+    <meta name="keywords" content="constructora, construcción, Villarrica, La Araucanía, movimiento de tierra, remodelaciones, construcción residencial, construcción comercial, construcción industrial">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LOGO SIN FONDO.png">
+    
+    <!-- Estilos CSS -->
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            z-index: 1000;
+            height: 80px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: #93c5fd;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-desktop.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+        
+        /* Secciones */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #1e3a8a;
+        }
+        
+        /* Proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .project-card-content {
+            padding: 1.5rem;
+        }
+        
+        .project-card h3 {
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: #1e3a8a;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            .hero {
+                background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-mobile.jpg') center/cover no-repeat;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="LOGO SIN FONDO.png" alt="Constructora Elite Sur">
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Constructora Elite Sur</h1>
+            <p>Construyendo el futuro con excelencia y compromiso</p>
+            <a href="#contacto" class="cta-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="section">
+        <div class="container">
+            <h2>Quiénes Somos</h2>
+            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                Somos una empresa líder en el sector de la construcción, con más de 15 años de experiencia 
+                en el desarrollo de proyectos residenciales, comerciales e industriales en la Región de La Araucanía. 
+                Nuestro compromiso es construir espacios de excelencia que transformen la vida de las personas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section" style="background: #f8fafc;">
+        <div class="container">
+            <h2>Nuestros Servicios Principales</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
+                    <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Construcción Residencial</h3>
+                    <p>Casas, departamentos y complejos habitacionales de alta calidad. Desde viviendas unifamiliares hasta condominios completos.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏢</div>
+                    <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Construcción Comercial</h3>
+                    <p>Oficinas, locales comerciales y centros comerciales modernos. Espacios diseñados para el éxito empresarial.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏭</div>
+                    <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Construcción Industrial</h3>
+                    <p>Plantas industriales, bodegas y complejos manufactureros. Infraestructura robusta para la producción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <h2>Nuestros Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/proyecto1.jpg" alt="Casa Residencial Villa del Lago" onerror="this.style.display='none'">
+                    <div class="project-card-content">
+                        <h3>Casa Residencial Villa del Lago</h3>
+                        <p><strong>Vivienda unifamiliar de 180m²</strong> con diseño moderno, 3 dormitorios, 2 baños y amplio living-comedor.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px; font-size: 0.9rem;">
+                            <div><strong>📍 Ubicación:</strong> Villarrica</div>
+                            <div><strong>📐 Superficie:</strong> 180m²</div>
+                            <div><strong>✅ Estado:</strong> Finalizado 2024</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/proyecto2.jpg" alt="Centro Comercial Plaza Villarrica" onerror="this.style.display='none'">
+                    <div class="project-card-content">
+                        <h3>Centro Comercial Plaza Villarrica</h3>
+                        <p><strong>Complejo comercial de 2,500m²</strong> con 25 locales comerciales, estacionamiento y áreas comunes.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px; font-size: 0.9rem;">
+                            <div><strong>📍 Ubicación:</strong> Villarrica Centro</div>
+                            <div><strong>📐 Superficie:</strong> 2,500m²</div>
+                            <div><strong>🚧 Estado:</strong> En Progreso</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/proyecto3.jpg" alt="Planta Industrial AgroSur" onerror="this.style.display='none'">
+                    <div class="project-card-content">
+                        <h3>Planta Industrial AgroSur</h3>
+                        <p><strong>Complejo industrial de 3,200m²</strong> para procesamiento agrícola con oficinas administrativas.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px; font-size: 0.9rem;">
+                            <div><strong>📍 Ubicación:</strong> Pucón</div>
+                            <div><strong>📐 Superficie:</strong> 3,200m²</div>
+                            <div><strong>✅ Estado:</strong> Finalizado 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section" style="background: #f8fafc;">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                    ¿Tienes un proyecto en mente? Contáctanos para una cotización gratuita.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <div>
+                        <strong>Teléfono:</strong><br>
+                        +56 9 4808 8573
+                    </div>
+                    <div>
+                        <strong>Email:</strong><br>
+                        info@constructoraelitsur.cl
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/56948088573?text=Hola!%20Me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20Constructora%20Elite%20Sur." class="whatsapp-button" target="_blank">
+        📱
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            // Toggle menú
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer click en enlace
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Navegación suave
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const headerHeight = 80;
+                        const targetPosition = targetSection.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Forzar carga de imágenes
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    console.log('Error cargando imagen:', this.src);
+                    // Intentar recargar
+                    const originalSrc = this.src;
+                    this.src = '';
+                    setTimeout(() => {
+                        this.src = originalSrc;
+                    }, 100);
+                };
+            });
+            
+            console.log('✅ Sitio web inicializado correctamente');
+        });
+    </script>
+</body>
+</html>

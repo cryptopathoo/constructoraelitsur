@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Simple - Constructora Elite Sur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .hero-test {
+            height: 400px;
+            background: url('images/hero-desktop.jpg') center/cover no-repeat;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin: 20px 0;
+        }
+        .image-test {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .image-test img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            display: block;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .nav-test {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .nav-test a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+        }
+        .nav-test a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test Simple - Constructora Elite Sur</h1>
+        
+        <div class="nav-test">
+            <h3>🔗 Test de Navegación:</h3>
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">Quiénes Somos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        
+        <div class="image-test">
+            <h3>🖼️ Test de Imagen Hero:</h3>
+            <div class="hero-test">
+                Imagen de Fondo Hero
+            </div>
+            <div id="hero-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>🏗️ Test de Imágenes de Proyectos:</h3>
+            <img src="images/proyecto1.jpg" alt="Proyecto 1" onload="showStatus('proyecto1', 'success')" onerror="showStatus('proyecto1', 'error')">
+            <div id="proyecto1-status"></div>
+            
+            <img src="images/proyecto2.jpg" alt="Proyecto 2" onload="showStatus('proyecto2', 'success')" onerror="showStatus('proyecto2', 'error')">
+            <div id="proyecto2-status"></div>
+            
+            <img src="images/proyecto3.jpg" alt="Proyecto 3" onload="showStatus('proyecto3', 'success')" onerror="showStatus('proyecto3', 'error')">
+            <div id="proyecto3-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>🏢 Test de Logo:</h3>
+            <img src="LOGO SIN FONDO.png" alt="Logo Constructora Elite Sur" onload="showStatus('logo', 'success')" onerror="showStatus('logo', 'error')">
+            <div id="logo-status"></div>
+        </div>
+
+        <div class="image-test">
+            <h3>📊 Resumen:</h3>
+            <div id="summary"></div>
+        </div>
+    </div>
+
+    <script>
+        let loadedImages = 0;
+        let totalImages = 4;
+
+        function showStatus(imageId, status) {
+            const statusDiv = document.getElementById(imageId + '-status');
+            if (statusDiv) {
+                statusDiv.innerHTML = `<div class="status ${status}">${status === 'success' ? '✅ Cargada correctamente' : '❌ Error al cargar'}</div>`;
+            }
+
+            if (status === 'success') {
+                loadedImages++;
+            }
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const summary = document.getElementById('summary');
+            const percentage = Math.round((loadedImages / totalImages) * 100);
+            
+            summary.innerHTML = `
+                <div class="status ${loadedImages === totalImages ? 'success' : 'error'}">
+                    📊 Estado: ${loadedImages}/${totalImages} imágenes cargadas (${percentage}%)
+                </div>
+            `;
+        }
+
+        // Test del fondo hero
+        window.onload = function() {
+            const heroTest = document.querySelector('.hero-test');
+            const computedStyle = window.getComputedStyle(heroTest);
+            const backgroundImage = computedStyle.backgroundImage;
+            
+            const heroStatus = document.getElementById('hero-status');
+            if (backgroundImage && backgroundImage !== 'none' && backgroundImage.includes('url')) {
+                heroStatus.innerHTML = '<div class="status success">✅ Fondo hero cargado correctamente</div>';
+            } else {
+                heroStatus.innerHTML = '<div class="status error">❌ Error en el fondo hero</div>';
+            }
+        };
+
+        // Test de navegación
+        document.querySelectorAll('.nav-test a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Click en: ' + this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>

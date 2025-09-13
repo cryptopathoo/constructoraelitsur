@@ -137,9 +137,9 @@
         ],
         "contactPoint": [
             {
-                "@type": "ContactPoint",
+            "@type": "ContactPoint",
                 "telephone": "+56-9-4808-8573",
-                "contactType": "customer service",
+            "contactType": "customer service",
                 "availableLanguage": "Spanish",
                 "areaServed": "CL"
             }
@@ -248,8 +248,93 @@
             margin-top: 0 !important;
         }
         
-        /* Header fijo en la parte superior */
+        /* ================= HEADER MEJORADO ================= */
         
+        /* ----- Corrección de capas ----- */
+        .header {
+            position: relative;
+            z-index: 10;
+        }
+
+        .navbar, .nav-container, .nav-menu, .nav-link {
+            position: relative;
+            z-index: 20;
+        }
+
+        .header-light-bursts,
+        .header-glow-effects,
+        .header-particles {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ----- Efectos de ráfagas ----- */
+        .header-burst {
+            position: absolute;
+            background: linear-gradient(90deg, transparent 0%, #3b82f6 50%, transparent 100%);
+        }
+        .header-burst1 { top: 20%; left: -100px; width: 200px; height: 2px; animation: headerBurstMove1 5s ease-in-out infinite; }
+        .header-burst2 { top: 50%; right: -150px; width: 300px; height: 1px; animation: headerBurstMove2 7s ease-in-out infinite; }
+        .header-burst3 { top: 80%; left: -200px; width: 400px; height: 1.5px; animation: headerBurstMove3 6s ease-in-out infinite; }
+        .header-burst4 { top: 30%; right: -120px; width: 240px; height: 1px; animation: headerBurstMove4 8s ease-in-out infinite; }
+
+        /* ----- Efectos de glow ----- */
+        .header-glow {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .header-glow1 { top: 15%; left: 25%; width: 50px; height: 50px; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); animation: headerGlowPulse1 9s ease-in-out infinite; }
+        .header-glow2 { top: 65%; right: 30%; width: 35px; height: 35px; background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%); animation: headerGlowPulse2 11s ease-in-out infinite; }
+        .header-glow3 { bottom: 25%; left: 70%; width: 25px; height: 25px; background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%); animation: headerGlowPulse3 13s ease-in-out infinite; }
+        .header-glow4 { top: 40%; left: 60%; width: 30px; height: 30px; background: radial-gradient(circle, rgba(147, 197, 253, 0.1) 0%, transparent 70%); animation: headerGlowPulse4 7s ease-in-out infinite; }
+        .header-glow5 { top: 80%; left: 10%; width: 40px; height: 40px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%); animation: headerGlowPulse5 10s ease-in-out infinite; }
+
+        /* ----- Partículas ----- */
+        .header-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.6);
+            width: 3px; height: 3px;
+            animation: float 6s ease-in-out infinite;
+        }
+        .header-particle:nth-child(2) { top: 30%; left: 80%; width: 2px; height: 2px; background: rgba(147, 197, 253, 0.5); animation: float 8s ease-in-out infinite reverse; }
+        .header-particle:nth-child(3) { top: 60%; left: 20%; width: 4px; height: 4px; background: rgba(59, 130, 246, 0.4); animation: float 7s ease-in-out infinite; }
+        .header-particle:nth-child(4) { top: 80%; left: 70%; width: 2px; height: 2px; background: rgba(147, 197, 253, 0.6); animation: float 9s ease-in-out infinite reverse; }
+        .header-particle:nth-child(5) { top: 40%; left: 50%; width: 3px; height: 3px; background: rgba(59, 130, 246, 0.5); animation: float 5s ease-in-out infinite; }
+
+        /* ----- Navbar ----- */
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        /* ----- Hamburguesa ----- */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 30;
+        }
+        .hamburger span {
+            display: block;
+            height: 3px;
+            margin: 5px 0;
+            background: #fff;
+            transition: 0.4s;
+        }
+
         /* Eliminar cualquier espacio del navbar */
         .navbar {
             margin: 0 !important;
@@ -1133,8 +1218,42 @@
             transform: translateY(0) !important;
         }
         
+        /* ----- Animaciones del Header ----- */
+        @keyframes headerBurstMove1 { from { transform: translateX(0); } to { transform: translateX(200%); } }
+        @keyframes headerBurstMove2 { from { transform: translateX(0); } to { transform: translateX(-200%); } }
+        @keyframes headerBurstMove3 { from { transform: translateX(0); } to { transform: translateX(200%); } }
+        @keyframes headerBurstMove4 { from { transform: translateX(0); } to { transform: translateX(-200%); } }
+
+        @keyframes headerGlowPulse1 { 0%, 100% { opacity: 0.2; transform: scale(1);} 50% { opacity: 0.6; transform: scale(1.3);} }
+        @keyframes headerGlowPulse2 { 0%, 100% { opacity: 0.1; transform: scale(1);} 50% { opacity: 0.5; transform: scale(1.2);} }
+        @keyframes headerGlowPulse3 { 0%, 100% { opacity: 0.2; transform: scale(1);} 50% { opacity: 0.6; transform: scale(1.4);} }
+        @keyframes headerGlowPulse4 { 0%, 100% { opacity: 0.1; transform: scale(1);} 50% { opacity: 0.4; transform: scale(1.2);} }
+        @keyframes headerGlowPulse5 { 0%, 100% { opacity: 0.15; transform: scale(1);} 50% { opacity: 0.5; transform: scale(1.3);} }
+
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 0.6; }
+            50% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(0px); opacity: 0.6; }
+        }
+
         /* Responsive para la sección de contacto */
         @media (max-width: 768px) {
+            /* ----- Header Responsive ----- */
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                background: rgba(0,0,0,0.9);
+                position: absolute;
+                top: 100%; left: 0;
+                width: 100%;
+                padding: 20px;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
             .contact {
                 padding: 40px 0 !important;
             }
@@ -1728,34 +1847,35 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <!-- Header -->
+    <!-- ================= HEADER ================= -->
     <header class="header">
-        <!-- Ráfagas de luz azul para el header -->
-        <div class="header-light-bursts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
-            <div class="header-burst header-burst1" style="position: absolute; top: 20%; left: -100px; width: 200px; height: 2px; background: linear-gradient(90deg, transparent 0%, #3b82f6 50%, transparent 100%); animation: headerBurstMove1 5s ease-in-out infinite;"></div>
-            <div class="header-burst header-burst2" style="position: absolute; top: 50%; right: -150px; width: 300px; height: 1px; background: linear-gradient(90deg, transparent 0%, #3b82f6 50%, transparent 100%); animation: headerBurstMove2 7s ease-in-out infinite;"></div>
-            <div class="header-burst header-burst3" style="position: absolute; top: 80%; left: -200px; width: 400px; height: 1.5px; background: linear-gradient(90deg, transparent 0%, #3b82f6 50%, transparent 100%); animation: headerBurstMove3 6s ease-in-out infinite;"></div>
-            <div class="header-burst header-burst4" style="position: absolute; top: 30%; right: -120px; width: 240px; height: 1px; background: linear-gradient(90deg, transparent 0%, #3b82f6 50%, transparent 100%); animation: headerBurstMove4 8s ease-in-out infinite;"></div>
+        <!-- Ráfagas de luz azul -->
+        <div class="header-light-bursts">
+            <div class="header-burst header-burst1"></div>
+            <div class="header-burst header-burst2"></div>
+            <div class="header-burst header-burst3"></div>
+            <div class="header-burst header-burst4"></div>
         </div>
         
-        <!-- Efectos de resplandor sutil para el header -->
-        <div class="header-glow-effects" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
-            <div class="header-glow header-glow1" style="position: absolute; top: 15%; left: 25%; width: 50px; height: 50px; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); border-radius: 50%; animation: headerGlowPulse1 9s ease-in-out infinite;"></div>
-            <div class="header-glow header-glow2" style="position: absolute; top: 65%; right: 30%; width: 35px; height: 35px; background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%); border-radius: 50%; animation: headerGlowPulse2 11s ease-in-out infinite;"></div>
-            <div class="header-glow header-glow3" style="position: absolute; bottom: 25%; left: 70%; width: 25px; height: 25px; background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%); border-radius: 50%; animation: headerGlowPulse3 13s ease-in-out infinite;"></div>
-            <div class="header-glow header-glow4" style="position: absolute; top: 40%; left: 60%; width: 30px; height: 30px; background: radial-gradient(circle, rgba(147, 197, 253, 0.1) 0%, transparent 70%); border-radius: 50%; animation: headerGlowPulse4 7s ease-in-out infinite;"></div>
-            <div class="header-glow header-glow5" style="position: absolute; top: 80%; left: 10%; width: 40px; height: 40px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%); border-radius: 50%; animation: headerGlowPulse5 10s ease-in-out infinite;"></div>
+        <!-- Efectos de resplandor -->
+        <div class="header-glow-effects">
+            <div class="header-glow header-glow1"></div>
+            <div class="header-glow header-glow2"></div>
+            <div class="header-glow header-glow3"></div>
+            <div class="header-glow header-glow4"></div>
+            <div class="header-glow header-glow5"></div>
         </div>
         
-        <!-- Efectos de partículas flotantes en el header -->
-        <div class="header-particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
-            <div class="header-particle" style="position: absolute; top: 10%; left: 10%; width: 3px; height: 3px; background: rgba(59, 130, 246, 0.6); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
-            <div class="header-particle" style="position: absolute; top: 30%; left: 80%; width: 2px; height: 2px; background: rgba(147, 197, 253, 0.5); border-radius: 50%; animation: float 8s ease-in-out infinite reverse;"></div>
-            <div class="header-particle" style="position: absolute; top: 60%; left: 20%; width: 4px; height: 4px; background: rgba(59, 130, 246, 0.4); border-radius: 50%; animation: float 7s ease-in-out infinite;"></div>
-            <div class="header-particle" style="position: absolute; top: 80%; left: 70%; width: 2px; height: 2px; background: rgba(147, 197, 253, 0.6); border-radius: 50%; animation: float 9s ease-in-out infinite reverse;"></div>
-            <div class="header-particle" style="position: absolute; top: 40%; left: 50%; width: 3px; height: 3px; background: rgba(59, 130, 246, 0.5); border-radius: 50%; animation: float 5s ease-in-out infinite;"></div>
+        <!-- Partículas -->
+        <div class="header-particles">
+            <div class="header-particle"></div>
+            <div class="header-particle"></div>
+            <div class="header-particle"></div>
+            <div class="header-particle"></div>
+            <div class="header-particle"></div>
         </div>
         
+        <!-- Navbar -->
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
@@ -1771,6 +1891,7 @@
                     <li><a href="#calculadora" class="nav-link">Presupuesto</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
+                <!-- Botón hamburguesa -->
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -1964,7 +2085,6 @@
                 <button class="filter-btn" data-filter="residencial">Residencial</button>
                 <button class="filter-btn" data-filter="comercial">Comercial</button>
                 <button class="filter-btn" data-filter="industrial">Industrial</button>
-                <button class="filter-btn" data-filter="remodelacion">Remodelación</button>
             </div>
             
             <div class="projects-grid">
@@ -2028,65 +2148,6 @@
                 </div>
                 </div>
                 
-                <div class="project-card" data-category="remodelacion">
-                    <div class="project-image-container">
-                        <img src="images/remodelacion-bano.jpg" alt="Remodelación Hotel Termas" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-gallery-btn" onclick="openGallery('hotel-termas')">
-                                <i class="fas fa-images"></i> Ver Galería
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Remodelación Hotel Termas</h3>
-                        <p>Renovación completa de 45 habitaciones, spa y áreas comunes del hotel termal.</p>
-                        <div class="project-details">
-                            <span class="project-location"><i class="fas fa-map-marker-alt"></i> Termas de Huife</span>
-                            <span class="project-area"><i class="fas fa-ruler-combined"></i> 1,800m²</span>
-                            <span class="project-status completed">Finalizado 2024</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="residencial">
-                    <div class="project-image-container">
-                        <img src="images/finalizado1.jpg" alt="Condominio Residencial Los Robles" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-gallery-btn" onclick="openGallery('los-robles')">
-                                <i class="fas fa-images"></i> Ver Galería
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Condominio Residencial Los Robles</h3>
-                        <p>Complejo de 12 casas de 150m² cada una, con áreas verdes y seguridad 24/7.</p>
-                        <div class="project-details">
-                            <span class="project-location"><i class="fas fa-map-marker-alt"></i> Villarrica</span>
-                            <span class="project-area"><i class="fas fa-ruler-combined"></i> 1,800m²</span>
-                            <span class="project-status completed">Finalizado 2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="comercial">
-                    <div class="project-image-container">
-                        <img src="images/finalizado2.jpg" alt="Oficinas Corporativas Sur" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-gallery-btn" onclick="openGallery('oficinas-sur')">
-                                <i class="fas fa-images"></i> Ver Galería
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Oficinas Corporativas Sur</h3>
-                        <p>Edificio de oficinas de 4 pisos con 2,000m² de superficie útil y estacionamiento subterráneo.</p>
-                        <div class="project-details">
-                            <span class="project-location"><i class="fas fa-map-marker-alt"></i> Temuco</span>
-                            <span class="project-area"><i class="fas fa-ruler-combined"></i> 2,000m²</span>
-                            <span class="project-status completed">Finalizado 2022</span>
-                        </div>
-                    </div>
-                </div>
             </div>
             
             <div class="projects-cta">
@@ -2102,38 +2163,6 @@
         </div>
     </section>
 
-    <!-- Proyectos Finalizados Section -->
-    <section id="proyectos-finalizados" class="completed-projects">
-        <div class="container">
-            <h2>Proyectos Finalizados</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                        <img src="images/proyecto1.jpg" alt="Torre Residencial" loading="lazy">
-                    <div class="project-info">
-                        <h3>Torre Residencial Central</h3>
-                        <p>Edificio de 20 pisos con 80 departamentos y vista panorámica.</p>
-                        <span class="project-status completed">Finalizado</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/finalizado1.jpg" alt="Oficinas Corporativas" loading="lazy">
-                    <div class="project-info">
-                        <h3>Oficinas Corporativas</h3>
-                        <p>Complejo de oficinas de 3,000 m² con diseño moderno y eficiente.</p>
-                        <span class="project-status completed">Finalizado</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/finalizado2.jpg" alt="Remodelación Hotel" loading="lazy">
-                    <div class="project-info">
-                        <h3>Remodelación Hotel Premium</h3>
-                        <p>Renovación completa de hotel de 150 habitaciones y áreas comunes.</p>
-                        <span class="project-status completed">Finalizado</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Testimonios Section -->
     <section id="testimonios" class="testimonials">
@@ -2311,25 +2340,6 @@
                             <span>Arquitecta - Proyecto Residencial</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="testimonials-stats">
-                <div class="stat-item">
-                    <h3>200+</h3>
-                    <p>Proyectos Completados</p>
-                </div>
-                <div class="stat-item">
-                    <h3>15+</h3>
-                    <p>Años de Experiencia</p>
-                </div>
-                <div class="stat-item">
-                    <h3>98%</h3>
-                    <p>Clientes Satisfechos</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Soporte Técnico</p>
                 </div>
             </div>
         </div>
@@ -2722,145 +2732,10 @@
     <!-- <script src="script-clean.js" defer></script> -->
     <!-- <script src="script-adicionales.js" defer></script> -->
     
-    <!-- Script de navegación simple -->
-    <script>
-        // Función global de navegación
-        window.scrollToSection = function(sectionId) {
-            console.log('🎯 Navegando a:', sectionId);
-            const element = document.querySelector(sectionId);
-            if (element) {
-                console.log('✅ Sección encontrada:', element);
-                const headerHeight = 90;
-                const targetPosition = element.offsetTop - headerHeight;
-                console.log('📍 Posición objetivo:', targetPosition);
-                
-                // Scroll suave
-                window.scrollTo({
-                    top: Math.max(0, targetPosition),
-                    behavior: 'smooth'
-                });
-            } else {
-                console.log('❌ Sección no encontrada:', sectionId);
-                // Listar todas las secciones disponibles para debug
-                const allSections = document.querySelectorAll('section[id]');
-                console.log('📋 Secciones disponibles:', Array.from(allSections).map(s => s.id));
-            }
-        }
-        
-        // Función de prueba para debug
-        window.testNavigation = function() {
-            console.log('🧪 Probando navegación...');
-            const quienesSomos = document.querySelector('#quienes-somos');
-            if (quienesSomos) {
-                console.log('✅ Sección Quiénes Somos encontrada');
-                window.scrollToSection('#quienes-somos');
-            } else {
-                console.log('❌ Sección Quiénes Somos NO encontrada');
-            }
-        }
-        
-        // Función de prueba directa
-        window.testDirectNavigation = function() {
-            console.log('🧪 Probando navegación directa...');
-            const element = document.querySelector('#quienes-somos');
-            if (element) {
-                const headerHeight = 90;
-                const targetPosition = element.offsetTop - headerHeight;
-                console.log('📍 Navegando directamente a posición:', targetPosition);
-                window.scrollTo({
-                    top: Math.max(0, targetPosition),
-                    behavior: 'smooth'
-                });
-            }
-        }
-    </script>
     
     
-    <!-- Script adicional para debuggear menú móvil -->
-    <script>
-        // Debug del menú móvil
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            console.log('🍔 Hamburger encontrado:', hamburger);
-            console.log('📱 Nav menu encontrado:', navMenu);
-            
-            if (hamburger && navMenu) {
-                // Función para cerrar el menú
-                function closeMenu() {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    console.log('📱 Menú cerrado');
-                }
-                
-                // Función para abrir/cerrar el menú
-                function toggleMenu() {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                    console.log('📱 Menú activo:', navMenu.classList.contains('active'));
-                }
-                
-                // Click en hamburger
-                hamburger.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('🖱️ Click en hamburger');
-                    toggleMenu();
-                });
-                
-                // Click en enlaces del menú - cerrar menú
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        const href = this.getAttribute('href');
-                        if (href && href.startsWith('#')) {
-                            e.preventDefault();
-                            console.log('🖱️ Click en enlace móvil:', href);
-                            
-                            // Cerrar menú móvil
-                            closeMenu();
-                            
-                            // Navegar a la sección usando la función global
-                            setTimeout(() => {
-                                if (window.navigateToSection) {
-                                    window.navigateToSection(href);
-                                } else {
-                                    const element = document.querySelector(href);
-                                    if (element) {
-                                        const headerHeight = 90;
-                                        const targetPosition = element.offsetTop - headerHeight;
-                                        window.scrollTo({
-                                            top: Math.max(0, targetPosition),
-                                            behavior: 'smooth'
-                                        });
-                                    }
-                                }
-                            }, 300);
-                        }
-                    });
-                });
-                
-                // Click fuera del menú - cerrar menú
-                document.addEventListener('click', function(e) {
-                    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                        if (navMenu.classList.contains('active')) {
-                            console.log('👆 Click fuera del menú, cerrando');
-                            closeMenu();
-                        }
-                    }
-                });
-                
-                // Tecla Escape - cerrar menú
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                        console.log('⌨️ Tecla Escape, cerrando menú');
-                        closeMenu();
-                    }
-                });
-            }
-        });
         
+    <script>
         // Función para abrir WhatsApp
         function openWhatsApp() {
             const phoneNumber = '+56948088573'; // Tu número de WhatsApp
@@ -2869,58 +2744,78 @@
             window.open(url, '_blank');
         }
         
-        // Debug y corrección de imágenes
-        function testAndFixImages() {
-            console.log('🔍 Iniciando diagnóstico de imágenes...');
+        // CORRECCIÓN DIRECTA DE IMÁGENES
+        function fixImages() {
+            console.log('🔧 Corrigiendo imágenes...');
             
-            // Verificar imágenes del hero
+            // 1. CORREGIR HERO INMEDIATAMENTE
             const hero = document.querySelector('.hero');
             if (hero) {
-                const computedStyle = window.getComputedStyle(hero);
-                const backgroundImage = computedStyle.backgroundImage;
-                console.log('🖼️ Imagen de fondo del hero:', backgroundImage);
+                const isMobile = window.innerWidth <= 768;
+                const heroImage = isMobile ? 'images/hero-mobile.jpg' : 'images/hero-desktop.jpg';
                 
-                if (backgroundImage === 'none' || !backgroundImage.includes('url')) {
-                    console.log('❌ No se detectó imagen de fondo - aplicando corrección');
-                    // Aplicar imagen de fondo directamente
-                    const isMobile = window.innerWidth <= 768;
-                    const heroImage = isMobile ? 'images/hero-mobile.jpg' : 'images/hero-desktop.jpg';
-                    hero.style.background = `url('${heroImage}') center/cover no-repeat, linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), linear-gradient(135deg, #2c5530 0%, #4a7c59 50%, #1a1a1a 100%)`;
-                    console.log('✅ Imagen de fondo corregida:', heroImage);
-                } else {
-                    console.log('✅ Imagen de fondo detectada correctamente');
-                }
+                // Aplicar imagen de fondo con !important
+                hero.style.setProperty('background', `url('${heroImage}') center/cover no-repeat, linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), linear-gradient(135deg, #2c5530 0%, #4a7c59 50%, #1a1a1a 100%)`, 'important');
+                hero.style.setProperty('background-size', 'cover', 'important');
+                hero.style.setProperty('background-position', 'center', 'important');
+                hero.style.setProperty('background-repeat', 'no-repeat', 'important');
+                
+                console.log('✅ Hero corregido:', heroImage);
             }
             
-            // Verificar todas las imágenes
-            const images = document.querySelectorAll('img');
-            let loadedImages = 0;
-            let totalImages = images.length;
-            
-            images.forEach((img, index) => {
-                img.onload = function() {
-                    loadedImages++;
-                    console.log(`✅ Imagen ${index + 1} cargada: ${img.src}`);
-                    if (loadedImages === totalImages) {
-                        console.log('🎉 Todas las imágenes cargadas correctamente');
-                    }
-                };
+            // 2. CORREGIR IMÁGENES DE PROYECTOS
+            const projectImages = document.querySelectorAll('img[src*="proyecto"], img[src*="finalizado"], img[src*="remodelacion"]');
+            projectImages.forEach((img, index) => {
+                const originalSrc = img.src;
+                img.style.setProperty('display', 'block', 'important');
+                img.style.setProperty('width', '100%', 'important');
+                img.style.setProperty('height', 'auto', 'important');
+                img.style.setProperty('max-width', '100%', 'important');
                 
-                img.onerror = function() {
-                    console.log(`❌ Error cargando imagen ${index + 1}: ${img.src}`);
-                    // Intentar cargar desde ruta absoluta si falla la relativa
-                    if (img.src.includes('LOGO SIN FONDO.png')) {
-                        img.src = 'https://constructoraelitsur.cl/LOGO%20SIN%20FONDO.png';
-                        console.log('🔄 Intentando cargar logo desde URL absoluta');
-                    }
-                };
+                // Forzar recarga
+                img.src = '';
+                setTimeout(() => {
+                    img.src = originalSrc;
+                }, 50);
+                
+                console.log(`✅ Proyecto ${index + 1} corregido: ${originalSrc.split('/').pop()}`);
             });
             
-            console.log(`📊 Verificando ${totalImages} imágenes...`);
+            // 3. AGREGAR CSS INLINE PARA ASEGURAR CARGA
+            const style = document.createElement('style');
+            style.textContent = `
+                .hero {
+                    background: url('images/hero-desktop.jpg') center/cover no-repeat !important;
+                    background-size: cover !important;
+                    background-position: center !important;
+                    background-repeat: no-repeat !important;
+                }
+                
+                @media (max-width: 768px) {
+                    .hero {
+                        background: url('images/hero-mobile.jpg') center/cover no-repeat !important;
+                    }
+                }
+                
+                .projects-grid img,
+                .project-card img,
+                .blog-card img {
+                    display: block !important;
+                    width: 100% !important;
+                    height: auto !important;
+                    max-width: 100% !important;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            console.log('✅ Corrección de imágenes completada');
         }
         
-        // Ejecutar test después de cargar
-        window.addEventListener('load', testAndFixImages);
+        // Ejecutar corrección inmediata
+        fixImages();
+        
+        // Ejecutar corrección después de cargar
+        window.addEventListener('load', fixImages);
         
         // Función para forzar recarga de imágenes
         function forceImageReload() {
@@ -2935,11 +2830,63 @@
             });
         }
         
-        // Función global para diagnóstico
-        window.diagnoseImages = testAndFixImages;
+        // Funciones globales para diagnóstico
+        window.fixImages = fixImages;
         window.reloadImages = forceImageReload;
         
-        // Navegación simple y funcional
+        // ================= NAVEGACIÓN MEJORADA =================
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Inicializando navegación mejorada...');
+            
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            // Menú hamburguesa
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", () => {
+                    navMenu.classList.toggle("active");
+                    hamburger.classList.toggle("active");
+                    console.log('🍔 Menú hamburguesa toggled');
+                });
+            }
+
+            // Navegación por enlaces
+            navLinks.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    
+                    const href = link.getAttribute('href');
+                    console.log('🔗 Navegando a:', href);
+                    
+                    // Cerrar menú móvil
+                    if (navMenu && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                    
+                    // Navegar a la sección
+                    if (href && href.startsWith('#')) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const headerHeight = 100;
+                            const targetPosition = target.offsetTop - headerHeight;
+                            
+                            window.scrollTo({
+                                top: Math.max(0, targetPosition),
+                                behavior: 'smooth'
+                            });
+                            
+                            console.log('✅ Navegación exitosa a:', href);
+                        } else {
+                            console.log('❌ Sección no encontrada:', href);
+                        }
+                    }
+                });
+            });
+
+            console.log('✅ Navegación mejorada inicializada correctamente');
+        });
     </script>
     
     <!-- Script para validación avanzada de formularios -->
@@ -3541,3 +3488,4 @@
     </a>
 </body>
 </html>
+

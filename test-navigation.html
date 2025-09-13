@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Navegación - Constructora Elite Sur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 0;
+            z-index: 1000;
+            height: 80px;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .section {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        #inicio { background: #3b82f6; }
+        #quienes-somos { background: #1e40af; }
+        #servicios { background: #1e3a8a; }
+        #proyectos-realizados { background: #1d4ed8; }
+        #testimonios { background: #2563eb; }
+        #blog { background: #3b82f6; }
+        #calculadora { background: #1e40af; }
+        #contacto { background: #1e3a8a; }
+        
+        .test-buttons {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border-radius: 10px;
+            z-index: 1001;
+        }
+        
+        .test-buttons button {
+            display: block;
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .test-buttons button:hover {
+            background: #0056b3;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: #1e3a8a;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Constructora Elite Sur</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos-realizados">Proyectos</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#calculadora">Presupuesto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Test Buttons -->
+    <div class="test-buttons">
+        <h4 style="color: white; margin: 0 0 1rem 0;">Test Manual:</h4>
+        <button onclick="simpleNavigate('#inicio')">Inicio</button>
+        <button onclick="simpleNavigate('#servicios')">Servicios</button>
+        <button onclick="simpleNavigate('#contacto')">Contacto</button>
+    </div>
+
+    <!-- Sections -->
+    <section id="inicio" class="section">
+        <h1>Inicio</h1>
+    </section>
+
+    <section id="quienes-somos" class="section">
+        <h1>Quiénes Somos</h1>
+    </section>
+
+    <section id="servicios" class="section">
+        <h1>Servicios</h1>
+    </section>
+
+    <section id="proyectos-realizados" class="section">
+        <h1>Proyectos</h1>
+    </section>
+
+    <section id="testimonios" class="section">
+        <h1>Testimonios</h1>
+    </section>
+
+    <section id="blog" class="section">
+        <h1>Blog</h1>
+    </section>
+
+    <section id="calculadora" class="section">
+        <h1>Presupuesto</h1>
+    </section>
+
+    <section id="contacto" class="section">
+        <h1>Contacto</h1>
+    </section>
+
+    <script>
+        // NAVEGACIÓN SIMPLE Y FUNCIONAL
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Iniciando navegación simple...');
+            
+            // Elementos
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            console.log('Elementos encontrados:', {
+                hamburger: !!hamburger,
+                navMenu: !!navMenu,
+                navLinks: navLinks.length
+            });
+            
+            // Menú móvil
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    console.log('Menú toggled');
+                });
+            }
+            
+            // Navegación
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const href = this.getAttribute('href');
+                    console.log('Navegando a:', href);
+                    
+                    // Cerrar menú móvil
+                    if (hamburger && navMenu) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                    
+                    // Navegar
+                    if (href && href.startsWith('#')) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const headerHeight = 80;
+                            const targetPosition = target.offsetTop - headerHeight;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                            
+                            console.log('Navegación exitosa a:', href);
+                        } else {
+                            console.log('Sección no encontrada:', href);
+                        }
+                    }
+                });
+            });
+            
+            console.log('✅ Navegación simple inicializada');
+        });
+        
+        // SCRIPT DE RESPALDO - NAVEGACIÓN BÁSICA
+        function simpleNavigate(targetId) {
+            const target = document.querySelector(targetId);
+            if (target) {
+                const headerHeight = 80;
+                const targetPosition = target.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                console.log('Navegación de respaldo exitosa a:', targetId);
+            }
+        }
+        
+        // Función global para navegación manual
+        window.simpleNavigate = simpleNavigate;
+    </script>
+</body>
+</html>
