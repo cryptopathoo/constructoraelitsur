@@ -1,0 +1,68 @@
+{
+  "name": "Constructora Elite Sur",
+  "short_name": "Elite Sur",
+  "description": "Especialistas en construcción residencial, comercial e industrial en Villarrica, La Araucanía",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e3a8a",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["business", "construction", "services"],
+  "icons": [
+    {
+      "src": "LOGO SIN FONDO.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "LOGO SIN FONDO.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/hero-desktop.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/hero-mobile.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contacta con nosotros",
+      "url": "/#contacto",
+      "icons": [
+        {
+          "src": "LOGO SIN FONDO.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Presupuesto",
+      "short_name": "Presupuesto",
+      "description": "Calcula tu presupuesto",
+      "url": "/#calculadora",
+      "icons": [
+        {
+          "src": "LOGO SIN FONDO.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

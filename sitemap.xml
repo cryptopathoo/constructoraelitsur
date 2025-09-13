@@ -1,21 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Página Principal -->
     <url>
         <loc>https://constructoraelitsur.cl/</loc>
         <lastmod>2025-01-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+    
+    <!-- Secciones de la página principal -->
     <url>
-        <loc>https://constructoraelitsur.cl/movimiento-tierra.html</loc>
+        <loc>https://constructoraelitsur.cl/#inicio</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/#quienes-somos</loc>
         <lastmod>2025-01-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://constructoraelitsur.cl/remodelacion-bano.html</loc>
+        <loc>https://constructoraelitsur.cl/#servicios</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/#proyectos-realizados</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/#testimonios</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/#blog</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/#calculadora</loc>
         <lastmod>2025-01-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/#contacto</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Páginas de servicios -->
+    <url>
+        <loc>https://constructoraelitsur.cl/construccion-residencial.html</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/construccion-comercial.html</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/construccion-industrial.html</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Recursos importantes -->
+    <url>
+        <loc>https://constructoraelitsur.cl/manifest.json</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://constructoraelitsur.cl/robots.txt</loc>
+        <lastmod>2025-01-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 </urlset>
