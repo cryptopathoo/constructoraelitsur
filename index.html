@@ -307,9 +307,11 @@
 
         /* ----- Navbar ----- */
         .nav-menu {
-            list-style: none;
             display: flex;
             gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
         .nav-link {
             color: #fff;
@@ -1240,19 +1242,30 @@
         @media (max-width: 768px) {
             /* ----- Header Responsive ----- */
             .nav-menu {
-                display: none;
-                flex-direction: column;
-                background: rgba(0,0,0,0.9);
                 position: absolute;
-                top: 100%; left: 0;
-                width: 100%;
+                top: 70px; /* justo debajo del header */
+                right: 0;
+                background: #111; /* color de fondo del menú */
+                flex-direction: column;
+                width: 220px;
                 padding: 20px;
+                display: none; /* oculto por defecto */
+                z-index: 99;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+                list-style: none;
+                margin: 0;
             }
+            
+            /* Mostrar cuando está activo */
             .nav-menu.active {
                 display: flex;
             }
+            
+            /* Ícono hamburguesa */
             .hamburger {
-                display: flex;
+                display: block;
+                cursor: pointer;
             }
             .contact {
                 padding: 40px 0 !important;
