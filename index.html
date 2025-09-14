@@ -3,11 +3,22 @@
 <!-- Versión actualizada: v5 - Cambios en Quiénes Somos -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constructora Elite Sur | Construcción Villarrica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- Meta tags para optimización móvil -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Elite Sur">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="msapplication-navbutton-color" content="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    
+    <title>Constructora Elite Sur | Construcción Villarrica La Araucanía</title>
     
     <!-- SEO Meta Tags Avanzados -->
-    <meta name="description" content="Constructora Elite Sur - Especialistas en construcción residencial, comercial e industrial en Villarrica. Movimiento de tierra, remodelaciones y proyectos de excelencia. Presupuestos gratuitos.">
+    <meta name="description" content="🏗️ Constructora Elite Sur en Villarrica - Especialistas en construcción residencial, comercial e industrial. ✅ Movimiento de tierra, remodelaciones, permisos municipales. 📞 Presupuesto gratuito +56 9 4808 8573">
     <meta name="keywords" content="constructora, construcción, Villarrica, La Araucanía, movimiento de tierra, remodelaciones, construcción residencial, construcción comercial, construcción industrial, presupuesto construcción, arquitectura, permisos municipales">
     <meta name="author" content="Constructora Elite Sur">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -33,6 +44,14 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="MobileOptimized" content="320">
     
+    <!-- Meta Tags de Seguridad HTTPS -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Constructora Elite Sur - Construyendo el Futuro">
     <meta property="og:description" content="Especialistas en construcción residencial, comercial e industrial en Villarrica, La Araucanía. Movimiento de tierra, remodelaciones y proyectos de excelencia.">
@@ -47,6 +66,11 @@
     <meta name="twitter:title" content="Constructora Elite Sur - Construyendo el Futuro">
     <meta name="twitter:description" content="Especialistas en construcción en Villarrica, La Araucanía. Movimiento de tierra, remodelaciones y proyectos de excelencia.">
     <meta name="twitter:image" content="https://constructoraelitsur.cl/LOGO%20SIN%20FONDO.png">
+    
+    <!-- Hreflang Tags para SEO Internacional -->
+    <link rel="alternate" hreflang="es-CL" href="https://constructoraelitsur.cl/">
+    <link rel="alternate" hreflang="es" href="https://constructoraelitsur.cl/">
+    <link rel="alternate" hreflang="x-default" href="https://constructoraelitsur.cl/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="LOGO SIN FONDO.png">
@@ -99,6 +123,167 @@
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     
+    <!-- CSS para scroll suave y optimización móvil -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px; /* Base font size para móviles */
+        }
+        
+        /* Optimización base para móviles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 1rem; /* 16px base */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Asegurar que los enlaces del blog funcionen */
+        .blog-link {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            touch-action: manipulation; /* Mejorar respuesta táctil */
+        }
+        
+        .blog-link:hover {
+            color: #3b82f6 !important;
+            transform: translateX(5px);
+        }
+        
+        /* Optimización de imágenes para móviles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Mejorar botones para móviles */
+        button, .btn, a[role="button"] {
+            min-height: 44px; /* Tamaño mínimo recomendado para touch */
+            min-width: 44px;
+            touch-action: manipulation;
+        }
+        
+        /* Optimización de formularios para móviles */
+        input, textarea, select {
+            font-size: 16px; /* Evitar zoom en iOS */
+            border-radius: 8px;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Media queries responsive mejoradas */
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px; /* Reducir base font size en móviles */
+            }
+            
+            body {
+                font-size: 1rem;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .container {
+                padding: 1rem;
+                max-width: 100%;
+            }
+            
+            /* Optimizar títulos para móviles */
+            h1 {
+                font-size: 2rem; /* 32px */
+                line-height: 1.2;
+            }
+            
+            h2 {
+                font-size: 1.75rem; /* 28px */
+                line-height: 1.3;
+            }
+            
+            h3 {
+                font-size: 1.5rem; /* 24px */
+                line-height: 1.4;
+            }
+            
+            /* Mejorar espaciado en móviles */
+            .section {
+                padding: 2rem 1rem;
+            }
+            
+            /* Optimizar grid para móviles */
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            /* Mejorar flexbox para móviles */
+            .flex {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .flex-row {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html {
+                font-size: 13px; /* Aún más pequeño para pantallas muy pequeñas */
+            }
+            
+            .container {
+                padding: 0.75rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem; /* 28px */
+            }
+            
+            h2 {
+                font-size: 1.5rem; /* 24px */
+            }
+            
+            h3 {
+                font-size: 1.25rem; /* 20px */
+            }
+            
+            /* Optimizar botones para pantallas pequeñas */
+            .btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+        
+        /* Optimización para pantallas muy grandes */
+        @media (min-width: 1200px) {
+            html {
+                font-size: 18px; /* Aumentar base font size en pantallas grandes */
+            }
+        }
+        
+        /* Mejorar accesibilidad táctil */
+        @media (hover: none) and (pointer: coarse) {
+            /* Estilos específicos para dispositivos táctiles */
+            .hover-effect:hover {
+                transform: none;
+            }
+            
+            .hover-effect:active {
+                transform: scale(0.98);
+            }
+        }
+    </style>
+    
     <!-- Schema.org Structured Data - Negocio Local -->
     <script type="application/ld+json">
     {
@@ -110,7 +295,7 @@
         "url": "https://constructoraelitsur.cl",
         "logo": "https://constructoraelitsur.cl/LOGO%20SIN%20FONDO.png",
         "image": "https://constructoraelitsur.cl/hero-desktop.jpg",
-        "description": "Constructora especializada en construcción residencial, comercial e industrial en Villarrica, La Araucanía. Más de 15 años de experiencia en proyectos de excelencia.",
+        "description": "Constructora Elite Sur - Especialistas en construcción residencial, comercial e industrial en Villarrica, La Araucanía. Movimiento de tierra, remodelaciones, permisos municipales. Presupuestos gratuitos. +15 años de experiencia.",
         "foundingDate": "2008",
         "address": {
             "@type": "PostalAddress",
@@ -139,11 +324,13 @@
             {
             "@type": "ContactPoint",
                 "telephone": "+56-9-4808-8573",
+                "email": "info@constructoraelitsur.cl",
             "contactType": "customer service",
                 "availableLanguage": "Spanish",
                 "areaServed": "CL"
             }
         ],
+        "email": "info@constructoraelitsur.cl",
         "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-14:00",
         "priceRange": "$$",
         "currenciesAccepted": "CLP",
@@ -157,7 +344,7 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Construcción Residencial",
-                        "description": "Construcción de casas, departamentos y complejos habitacionales"
+                        "description": "Construcción de casas, departamentos y complejos habitacionales en Villarrica. Proyectos personalizados con permisos municipales incluidos."
                     }
                 },
                 {
@@ -165,7 +352,7 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Construcción Comercial",
-                        "description": "Construcción de oficinas, locales y centros comerciales"
+                        "description": "Construcción de oficinas, locales comerciales y centros comerciales. Diseño y construcción profesional en La Araucanía."
                     }
                 },
                 {
@@ -193,6 +380,49 @@
         "keywords": "constructora, construcción, Villarrica, La Araucanía, construcción residencial, construcción comercial, construcción industrial"
     }
     </script>
+    
+    <!-- FAQ Schema para Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Ofrecen presupuestos gratuitos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, ofrecemos presupuestos completamente gratuitos para todos nuestros servicios de construcción residencial, comercial e industrial en Villarrica."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Incluyen permisos municipales en sus servicios?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, nos encargamos de todos los trámites y permisos municipales necesarios para tu proyecto de construcción."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿En qué zonas de La Araucanía trabajan?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Trabajamos principalmente en Villarrica y toda la Región de La Araucanía, ofreciendo servicios de construcción residencial, comercial e industrial."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuántos años de experiencia tienen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Constructora Elite Sur tiene más de 15 años de experiencia en construcción, especializándose en proyectos de excelencia en Villarrica."
+                }
+            }
+        ]
+    }
+    </script>
+    
     <link rel="preload" href="styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
     <link rel="stylesheet" href="styles-adicionales.css">
@@ -2511,7 +2741,7 @@
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/proyecto1-optimized.jpg" alt="Tendencias en construcción 2024" loading="lazy">
+                        <img src="images/proyecto1-optimized.jpg" alt="Tendencias en construcción 2024" loading="lazy" width="400" height="250">
                         <div class="blog-date">
                             <span class="day">15</span>
                             <span class="month">Ene</span>
@@ -2521,13 +2751,13 @@
                         <div class="blog-category">Tendencias</div>
                         <h3>Tendencias en Construcción 2024</h3>
                         <p>Descubre las últimas tendencias en construcción que están marcando el 2024, desde materiales sostenibles hasta diseños inteligentes.</p>
-                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        <a href="#servicios" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
                             </div>
                 </article>
                 
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/remodelacion-bano.jpg" alt="Consejos para remodelar baños" loading="lazy">
+                        <img src="images/remodelacion-bano.jpg" alt="Consejos para remodelar baños" loading="lazy" width="400" height="250">
                         <div class="blog-date">
                             <span class="day">08</span>
                             <span class="month">Ene</span>
@@ -2537,13 +2767,13 @@
                         <div class="blog-category">Consejos</div>
                         <h3>Consejos para Remodelar tu Baño</h3>
                         <p>Te damos los mejores consejos para remodelar tu baño sin sorpresas. Planificación, presupuesto y materiales recomendados.</p>
-                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contacto" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
                         </div>
                 </article>
                 
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/finalizado1.jpg" alt="Materiales sostenibles" loading="lazy">
+                        <img src="images/finalizado1.jpg" alt="Materiales sostenibles" loading="lazy" width="400" height="250">
                         <div class="blog-date">
                             <span class="day">02</span>
                             <span class="month">Ene</span>
@@ -2553,7 +2783,7 @@
                         <div class="blog-category">Sostenibilidad</div>
                         <h3>Materiales Sostenibles en Construcción</h3>
                         <p>Conoce los materiales más sostenibles para tu proyecto de construcción y cómo contribuyen al cuidado del medio ambiente.</p>
-                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        <a href="#servicios" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
                             </div>
                 </article>
                             </div>
@@ -2828,7 +3058,7 @@
                         </div>
                         <div class="contact-item" style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;">
                             <i class="fas fa-envelope" style="color: #3b82f6; font-size: 0.9rem;"></i>
-                            <span style="color: #ffffff; font-weight: 500; font-size: 14px;">info@constructoraelitsur.cl</span>
+                            <a href="mailto:info@constructoraelitsur.cl" style="color: #ffffff; font-weight: 500; font-size: 14px; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#ffffff'">info@constructoraelitsur.cl</a>
                         </div>
                         <div class="contact-item" style="display: flex; align-items: center; gap: 0.6rem;">
                             <i class="fas fa-map-marker-alt" style="color: #3b82f6; font-size: 0.9rem;"></i>
@@ -3668,6 +3898,139 @@
             
             console.log('✅ Script de respaldo configurado correctamente');
         }, 500); // Ejecutar después de 500ms
+        
+        // Script simple y directo para enlaces del blog
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔧 Inicializando enlaces del blog...');
+            
+            // Función simple para scroll suave
+            function smoothScrollTo(targetId) {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerHeight = 100; // Altura fija del header
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    console.log('✅ Navegando a:', targetId);
+                    return true;
+                } else {
+                    console.error('❌ Sección no encontrada:', targetId);
+                    return false;
+                }
+            }
+            
+            // Configurar enlaces del blog
+            const blogLinks = document.querySelectorAll('.blog-link');
+            console.log('📋 Enlaces del blog encontrados:', blogLinks.length);
+            
+            blogLinks.forEach((link, index) => {
+                const href = link.getAttribute('href');
+                console.log(`🔗 Configurando enlace ${index + 1}:`, href);
+                
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🎯 Clic en enlace del blog:', href);
+                    smoothScrollTo(href);
+                });
+            });
+            
+            console.log('✅ Enlaces del blog configurados');
+        });
+        
+        // Script de optimización móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📱 Inicializando optimizaciones móviles...');
+            
+            // Optimización de imágenes para móviles
+            function optimizeImagesForMobile() {
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    // Agregar atributos de optimización
+                    if (!img.hasAttribute('decoding')) {
+                        img.setAttribute('decoding', 'async');
+                    }
+                    
+                    // Optimizar para dispositivos de alta densidad
+                    if (window.devicePixelRatio > 1) {
+                        const src = img.src;
+                        if (src && !src.includes('@2x') && !src.includes('@3x')) {
+                            // Si hay versión de alta resolución, usarla
+                            const highResSrc = src.replace(/\.(jpg|jpeg|png)$/, '@2x.$1');
+                            // Solo cambiar si la imagen de alta resolución existe
+                            const testImg = new Image();
+                            testImg.onload = function() {
+                                img.src = highResSrc;
+                            };
+                            testImg.src = highResSrc;
+                        }
+                    }
+                });
+            }
+            
+            // Optimización de formularios para móviles
+            function optimizeFormsForMobile() {
+                const inputs = document.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    // Prevenir zoom en iOS
+                    if (input.type === 'text' || input.type === 'email' || input.type === 'tel') {
+                        input.style.fontSize = '16px';
+                    }
+                    
+                    // Mejorar accesibilidad táctil
+                    input.style.minHeight = '44px';
+                });
+            }
+            
+            // Optimización de botones para móviles
+            function optimizeButtonsForMobile() {
+                const buttons = document.querySelectorAll('button, .btn, a[role="button"]');
+                buttons.forEach(button => {
+                    // Tamaño mínimo para touch
+                    button.style.minHeight = '44px';
+                    button.style.minWidth = '44px';
+                    
+                    // Mejorar respuesta táctil
+                    button.style.touchAction = 'manipulation';
+                });
+            }
+            
+            // Detectar dispositivo móvil
+            function isMobileDevice() {
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                       window.innerWidth <= 768;
+            }
+            
+            // Aplicar optimizaciones solo en móviles
+            if (isMobileDevice()) {
+                console.log('📱 Dispositivo móvil detectado, aplicando optimizaciones...');
+                optimizeImagesForMobile();
+                optimizeFormsForMobile();
+                optimizeButtonsForMobile();
+                
+                // Optimización adicional para móviles
+                document.body.classList.add('mobile-optimized');
+                
+                // Preload de recursos críticos
+                const criticalResources = [
+                    'styles.min.css',
+                    'script.js'
+                ];
+                
+                criticalResources.forEach(resource => {
+                    const link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.href = resource;
+                    link.as = resource.endsWith('.css') ? 'style' : 'script';
+                    document.head.appendChild(link);
+                });
+            }
+            
+            console.log('✅ Optimizaciones móviles aplicadas');
+        });
     </script>
 
     <!-- Botón flotante de WhatsApp -->

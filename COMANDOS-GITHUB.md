@@ -147,3 +147,4 @@ git push origin main
 ---
 
 **¡Después de subir estos archivos, tu sitio web estará completamente actualizado con todas las mejoras implementadas!** 🎉
+

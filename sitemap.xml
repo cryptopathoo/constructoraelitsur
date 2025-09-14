@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <!-- Página Principal -->
     <url>
         <loc>https://constructoraelitsur.cl/</loc>
         <lastmod>2025-01-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es-CL" href="https://constructoraelitsur.cl/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://constructoraelitsur.cl/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://constructoraelitsur.cl/"/>
     </url>
     
     <!-- Secciones de la página principal -->
@@ -64,18 +67,27 @@
         <lastmod>2025-01-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es-CL" href="https://constructoraelitsur.cl/construccion-residencial.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://constructoraelitsur.cl/construccion-residencial.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://constructoraelitsur.cl/construccion-residencial.html"/>
     </url>
     <url>
         <loc>https://constructoraelitsur.cl/construccion-comercial.html</loc>
         <lastmod>2025-01-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es-CL" href="https://constructoraelitsur.cl/construccion-comercial.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://constructoraelitsur.cl/construccion-comercial.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://constructoraelitsur.cl/construccion-comercial.html"/>
     </url>
     <url>
         <loc>https://constructoraelitsur.cl/construccion-industrial.html</loc>
         <lastmod>2025-01-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es-CL" href="https://constructoraelitsur.cl/construccion-industrial.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://constructoraelitsur.cl/construccion-industrial.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://constructoraelitsur.cl/construccion-industrial.html"/>
     </url>
     
     <!-- Recursos importantes -->

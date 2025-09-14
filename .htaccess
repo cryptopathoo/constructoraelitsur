@@ -1,57 +1,7 @@
-# Configuración de códigos de estado HTTP para Constructora Elite Sur
+# Configuración para Constructora Elite Sur
+# Prevenir problemas con protección de email de Cloudflare
 
-# Habilitar mod_rewrite
-RewriteEngine On
-
-# Redirección HTTP a HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Redirección www a no-www
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-
-# Manejo de errores personalizados
-ErrorDocument 404 /404.html
-ErrorDocument 500 /404.html
-
-# Headers de seguridad
-<IfModule mod_headers.c>
-    Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
-    Header always set X-XSS-Protection "1; mode=block"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-</IfModule>
-
-# Configuración de tipos MIME
-<IfModule mod_mime.c>
-    AddType text/css .css
-    AddType application/javascript .js
-    AddType image/svg+xml .svg
-    AddType image/webp .webp
-    AddType application/manifest+json .webmanifest
-    AddType application/json .json
-    
-    # Tipos MIME para imágenes
-    AddType image/jpeg .jpg .jpeg
-    AddType image/png .png
-    AddType image/gif .gif
-    AddType image/webp .webp
-    AddType image/svg+xml .svg
-</IfModule>
-
-# Reglas específicas para imágenes
-<IfModule mod_rewrite.c>
-    # Permitir acceso directo a imágenes
-    RewriteCond %{REQUEST_FILENAME} \.(jpg|jpeg|png|gif|webp|svg)$ [NC]
-    RewriteRule ^(.*)$ - [L]
-    
-    # Fallback para imágenes con espacios en el nombre
-    RewriteRule ^LOGO%20SIN%20FONDO\.png$ "LOGO SIN FONDO.png" [L]
-</IfModule>
-
-# Compresión GZIP
+# Habilitar compresión
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
@@ -62,44 +12,44 @@ ErrorDocument 500 /404.html
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE application/json
 </IfModule>
 
-# Caché del navegador
+# Configurar caché
 <IfModule mod_expires.c>
     ExpiresActive on
-    
-    # Imágenes
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpg "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
-    
-    # CSS y JavaScript
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType application/x-javascript "access plus 1 month"
-    
-    # HTML
-    ExpiresByType text/html "access plus 1 hour"
-    
-    # Otros
-    ExpiresByType application/pdf "access plus 1 month"
-    ExpiresByType application/json "access plus 1 hour"
 </IfModule>
 
-# Prevenir acceso directo a archivos sensibles
-<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
-    Order Allow,Deny
-    Deny from all
-</FilesMatch>
-
-# Configuración para archivos PHP
-<IfModule mod_php.c>
-    php_value upload_max_filesize 10M
-    php_value post_max_size 10M
-    php_value max_execution_time 300
-    php_value max_input_vars 3000
+# Configurar headers de seguridad
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Headers de seguridad HTTPS
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set Content-Security-Policy "upgrade-insecure-requests"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
+
+# Redireccionar www a no-www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.constructoraelitsur\.cl [NC]
+RewriteRule ^(.*)$ https://constructoraelitsur.cl/$1 [R=301,L]
+
+# Forzar HTTPS - Redirección automática de HTTP a HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redireccionar HTTP a HTTPS (método alternativo)
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://constructoraelitsur.cl/$1 [R=301,L]

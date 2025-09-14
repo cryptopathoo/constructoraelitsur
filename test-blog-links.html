@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Enlaces del Blog</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        
+        .blog-section {
+            margin: 40px 0;
+        }
+        
+        .blog-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .blog-link {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .blog-link:hover {
+            background: #2563eb;
+        }
+        
+        .target-section {
+            background: #e0f2fe;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 8px;
+            border: 2px solid #0ea5e9;
+        }
+        
+        .target-section h2 {
+            color: #0c4a6e;
+            margin-top: 0;
+        }
+        
+        .test-info {
+            background: #fef3c7;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 Test de Enlaces del Blog</h1>
+            <p>Prueba de funcionamiento de los enlaces "Leer más"</p>
+        </div>
+        
+        <div class="test-info">
+            <strong>📋 Instrucciones:</strong>
+            <ol>
+                <li>Haz clic en los enlaces "Leer más" de abajo</li>
+                <li>Deberías navegar suavemente a las secciones correspondientes</li>
+                <li>Si funciona aquí, el problema está en el archivo principal</li>
+            </ol>
+        </div>
+        
+        <div class="blog-section">
+            <h2>📰 Artículos del Blog</h2>
+            
+            <div class="blog-card">
+                <h3>Tendencias en Construcción 2024</h3>
+                <p>Descubre las últimas tendencias en construcción que están marcando el 2024, desde materiales sostenibles hasta diseños inteligentes.</p>
+                <a href="#servicios" class="blog-link">Leer más →</a>
+            </div>
+            
+            <div class="blog-card">
+                <h3>Consejos para Remodelar tu Baño</h3>
+                <p>Te damos los mejores consejos para remodelar tu baño sin sorpresas. Planificación, presupuesto y materiales recomendados.</p>
+                <a href="#contacto" class="blog-link">Leer más →</a>
+            </div>
+            
+            <div class="blog-card">
+                <h3>Materiales Sostenibles en Construcción</h3>
+                <p>Conoce los materiales más sostenibles para tu proyecto de construcción y cómo contribuyen al cuidado del medio ambiente.</p>
+                <a href="#servicios" class="blog-link">Leer más →</a>
+            </div>
+        </div>
+        
+        <div id="servicios" class="target-section">
+            <h2>🏗️ Sección de Servicios</h2>
+            <p>Esta es la sección de servicios. Si llegaste aquí haciendo clic en "Leer más" desde el artículo de "Tendencias en Construcción 2024" o "Materiales Sostenibles", ¡los enlaces funcionan correctamente!</p>
+            <p><strong>Servicios disponibles:</strong></p>
+            <ul>
+                <li>Construcción Residencial</li>
+                <li>Construcción Comercial</li>
+                <li>Construcción Industrial</li>
+                <li>Remodelaciones</li>
+                <li>Movimiento de Tierra</li>
+            </ul>
+        </div>
+        
+        <div id="contacto" class="target-section">
+            <h2>📞 Sección de Contacto</h2>
+            <p>Esta es la sección de contacto. Si llegaste aquí haciendo clic en "Leer más" desde el artículo de "Consejos para Remodelar tu Baño", ¡los enlaces funcionan correctamente!</p>
+            <p><strong>Información de contacto:</strong></p>
+            <ul>
+                <li>📞 Teléfono: +56 9 4808 8573</li>
+                <li>📧 Email: info@constructoraelitsur.cl</li>
+                <li>📍 Ubicación: Villarrica, La Araucanía</li>
+            </ul>
+        </div>
+        
+        <div class="test-info">
+            <strong>✅ Resultado del Test:</strong>
+            <p>Si pudiste navegar a las secciones haciendo clic en "Leer más", entonces el problema está en el archivo principal <code>index.html</code> y no en la funcionalidad básica.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Script simple para logging
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔧 Test de enlaces del blog iniciado');
+            
+            const blogLinks = document.querySelectorAll('.blog-link');
+            console.log('📋 Enlaces encontrados:', blogLinks.length);
+            
+            blogLinks.forEach((link, index) => {
+                const href = link.getAttribute('href');
+                console.log(`🔗 Enlace ${index + 1}:`, href);
+                
+                link.addEventListener('click', function(e) {
+                    console.log('🎯 Clic en enlace:', href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
