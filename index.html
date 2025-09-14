@@ -366,6 +366,7 @@
         @media (max-width: 768px) {
             .nav-container {
                 padding: 1rem;
+                position: relative;
             }
             
             /* Ocultar menú normal en móviles */
@@ -376,13 +377,15 @@
                 flex-direction: column;
                 background: rgba(30, 58, 138, 0.98);
                 width: 100%;
+                height: calc(100vh - 70px);
                 text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                transition: left 0.3s ease;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
                 backdrop-filter: blur(10px);
                 padding: 2rem 0;
-                gap: 1rem;
+                gap: 0;
                 z-index: 999;
+                overflow-y: auto;
             }
             
             /* Mostrar menú cuando está activo */
@@ -390,23 +393,33 @@
                 left: 0;
             }
             
+            .nav-menu li {
+                width: 100%;
+                margin: 0;
+            }
+            
             .nav-link {
                 color: white;
                 font-size: 1.1rem;
-                padding: 1rem;
+                padding: 1.2rem 1rem;
                 display: block;
                 border-radius: 0;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+                text-align: center;
+                transition: all 0.3s ease;
             }
             
             .nav-link:hover {
-                background: rgba(59, 130, 246, 0.2);
+                background: rgba(59, 130, 246, 0.3);
                 color: #60a5fa;
+                transform: translateX(5px);
             }
             
             /* Mostrar botón hamburguesa en móviles */
             .hamburger {
                 display: flex;
+                z-index: 1001;
             }
             
             /* Ajustar logo en móviles */
@@ -428,24 +441,57 @@
                 left: auto !important;
                 top: auto !important;
                 width: auto !important;
+                height: auto !important;
                 flex-direction: row !important;
                 padding: 0 !important;
                 box-shadow: none !important;
                 backdrop-filter: none !important;
+                gap: 0.5rem !important;
+                overflow: visible !important;
+            }
+            
+            .nav-menu li {
+                width: auto !important;
+                margin: 0 !important;
             }
             
             .nav-link {
                 color: white !important;
-                font-size: 1rem !important;
-                padding: 0.5rem 1rem !important;
+                font-size: 0.9rem !important;
+                padding: 0.5rem 0.8rem !important;
                 display: inline-block !important;
                 border-radius: 5px !important;
                 border-bottom: none !important;
+                width: auto !important;
+                text-align: center !important;
+                white-space: nowrap !important;
+                transition: all 0.3s ease !important;
             }
             
             .nav-link:hover {
                 background: rgba(255, 255, 255, 0.1) !important;
                 color: #3b82f6 !important;
+                transform: translateY(-2px) !important;
+            }
+        }
+        
+        /* Para pantallas muy grandes, ajustar el menú */
+        @media (min-width: 1024px) {
+            .nav-link {
+                font-size: 1rem !important;
+                padding: 0.6rem 1rem !important;
+            }
+        }
+        
+        /* Para pantallas extra grandes */
+        @media (min-width: 1200px) {
+            .nav-container {
+                padding: 1rem 2rem !important;
+            }
+            
+            .nav-link {
+                font-size: 1rem !important;
+                padding: 0.7rem 1.2rem !important;
             }
         }
         
@@ -456,16 +502,29 @@
             
             .nav-menu {
                 top: 60px;
+                height: calc(100vh - 60px);
                 padding: 1.5rem 0;
             }
             
             .nav-link {
                 font-size: 1rem;
-                padding: 0.8rem;
+                padding: 1rem 0.8rem;
             }
             
             .logo-img {
                 height: 35px;
+            }
+        }
+        
+        /* Para pantallas muy pequeñas (menos de 360px) */
+        @media (max-width: 360px) {
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 0.8rem 0.6rem;
+            }
+            
+            .logo-img {
+                height: 30px;
             }
         }
     </style>
@@ -3341,19 +3400,34 @@
             projectImages.forEach((img, index) => {
                 const originalSrc = img.src;
                 
-                // Corregir rutas que no tienen 'images/' al inicio
+                // Solo corregir si la ruta no es correcta
                 if (!originalSrc.includes('images/') && !originalSrc.includes('http')) {
                     const fileName = originalSrc.split('/').pop();
                     img.src = `images/${fileName}`;
                     console.log(`🔧 Ruta corregida: ${originalSrc} → images/${fileName}`);
+                } else {
+                    console.log(`✅ Ruta ya correcta: ${originalSrc}`);
                 }
                 
+                // Asegurar que las imágenes se muestren correctamente
                 img.style.setProperty('display', 'block', 'important');
                 img.style.setProperty('width', '100%', 'important');
                 img.style.setProperty('height', 'auto', 'important');
                 img.style.setProperty('max-width', '100%', 'important');
+                img.style.setProperty('opacity', '1', 'important');
+                img.style.setProperty('visibility', 'visible', 'important');
                 
-                console.log(`✅ Proyecto ${index + 1} corregido: ${img.src.split('/').pop()}`);
+                // Forzar recarga de la imagen si no se está cargando
+                if (img.complete && img.naturalHeight === 0) {
+                    const currentSrc = img.src;
+                    img.src = '';
+                    setTimeout(() => {
+                        img.src = currentSrc;
+                    }, 100);
+                    console.log(`🔄 Forzando recarga de imagen: ${currentSrc.split('/').pop()}`);
+                }
+                
+                console.log(`✅ Proyecto ${index + 1} procesado: ${img.src.split('/').pop()}`);
             });
             
             // 3. AGREGAR CSS INLINE PARA ASEGURAR CARGA
@@ -4234,6 +4308,71 @@
             }
             
             console.log('✅ Optimizaciones móviles aplicadas');
+        });
+        
+        // Script específico para corregir imágenes de proyectos
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🖼️ Verificando imágenes de proyectos...');
+            
+            // Función para verificar y corregir una imagen específica
+            function verifyProjectImage(imgElement, expectedSrc) {
+                if (imgElement) {
+                    // Verificar si la imagen se está cargando
+                    if (imgElement.complete && imgElement.naturalHeight === 0) {
+                        console.log(`❌ Imagen no cargada: ${expectedSrc}`);
+                        
+                        // Intentar cargar la imagen
+                        const testImg = new Image();
+                        testImg.onload = function() {
+                            imgElement.src = expectedSrc;
+                            imgElement.style.opacity = '1';
+                            imgElement.style.visibility = 'visible';
+                            console.log(`✅ Imagen corregida: ${expectedSrc}`);
+                        };
+                        testImg.onerror = function() {
+                            console.error(`❌ Imagen no encontrada: ${expectedSrc}`);
+                        };
+                        testImg.src = expectedSrc;
+                    } else {
+                        console.log(`✅ Imagen cargada correctamente: ${expectedSrc}`);
+                    }
+                }
+            }
+            
+            // Verificar imágenes específicas de proyectos
+            const project1Img = document.querySelector('img[alt="Casa Residencial Villa del Lago"]');
+            const project2Img = document.querySelector('img[alt="Centro Comercial Plaza Villarrica"]');
+            const project3Img = document.querySelector('img[alt="Planta Industrial AgroSur"]');
+            
+            if (project1Img) {
+                verifyProjectImage(project1Img, 'images/proyecto1.jpg');
+            }
+            
+            if (project2Img) {
+                verifyProjectImage(project2Img, 'images/proyecto2.jpg');
+            }
+            
+            if (project3Img) {
+                verifyProjectImage(project3Img, 'images/proyecto3.jpg');
+            }
+            
+            // Verificar todas las imágenes de proyectos
+            const allProjectImages = document.querySelectorAll('.project-card img');
+            console.log(`📋 Imágenes de proyectos encontradas: ${allProjectImages.length}`);
+            
+            allProjectImages.forEach((img, index) => {
+                console.log(`🖼️ Proyecto ${index + 1}: ${img.src} - Altura: ${img.naturalHeight}px`);
+                
+                // Asegurar que las imágenes se muestren
+                img.style.display = 'block';
+                img.style.width = '100%';
+                img.style.height = 'auto';
+                img.style.maxWidth = '100%';
+                img.style.opacity = '1';
+                img.style.visibility = 'visible';
+            });
+            
+            console.log('✅ Verificación de imágenes de proyectos completada');
         });
         
         // Script del menú hamburguesa
