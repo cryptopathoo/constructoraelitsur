@@ -2469,6 +2469,55 @@
                 font-size: 24px !important;
             }
         }
+        
+        /* Estilos para placeholders de proyectos y blog */
+        .project-placeholder, .blog-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 2px dashed #dee2e6;
+            color: #6c757d;
+            transition: all 0.3s ease;
+        }
+        
+        .project-placeholder:hover, .blog-placeholder:hover {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            border-color: #007BFF;
+            color: #007BFF;
+            transform: translateY(-2px);
+        }
+        
+        .project-placeholder i, .blog-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+        
+        .project-placeholder span, .blog-placeholder span {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* Responsive para placeholders */
+        @media (max-width: 768px) {
+            .project-placeholder, .blog-placeholder {
+                height: 200px;
+            }
+            
+            .project-placeholder i, .blog-placeholder i {
+                font-size: 2.5rem;
+            }
+            
+            .project-placeholder span, .blog-placeholder span {
+                font-size: 1rem;
+            }
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -2722,7 +2771,7 @@
             <div class="projects-grid">
                 <div class="project-card" data-category="residencial">
                     <div class="project-image-container">
-                        <img src="images/proyecto1.jpg" alt="Casa Residencial Villa del Lago" loading="lazy">
+                        <img src="images/casa-residencial-villa-lago.jpg" alt="Casa Residencial Villa del Lago - Proyecto Finalizado 2024" title="Casa Residencial Villa del Lago - Proyecto Finalizado 2024" loading="lazy">
                         <div class="project-overlay">
                             <button class="view-gallery-btn" onclick="openGallery('villa-lago')">
                                 <i class="fas fa-images"></i> Ver Galería
@@ -2742,7 +2791,7 @@
                 
                 <div class="project-card" data-category="comercial">
                     <div class="project-image-container">
-                        <img src="images/proyecto2.jpg" alt="Centro Comercial Plaza Villarrica" loading="lazy">
+                        <img src="images/centro-comercial-plaza-villarrica.jpg" alt="Centro Comercial Plaza Villarrica - Proyecto en Progreso" title="Centro Comercial Plaza Villarrica - Proyecto en Progreso" loading="lazy">
                         <div class="project-overlay">
                             <button class="view-gallery-btn" onclick="openGallery('plaza-villarrica')">
                                 <i class="fas fa-images"></i> Ver Galería
@@ -2762,7 +2811,7 @@
                 
                 <div class="project-card" data-category="industrial">
                     <div class="project-image-container">
-                        <img src="images/proyecto3.jpg" alt="Planta Industrial AgroSur" loading="lazy">
+                        <img src="images/planta-industrial-agrosur.jpg" alt="Planta Industrial AgroSur - Proyecto Finalizado 2023" title="Planta Industrial AgroSur - Proyecto Finalizado 2023" loading="lazy">
                         <div class="project-overlay">
                             <button class="view-gallery-btn" onclick="openGallery('agrosur')">
                                 <i class="fas fa-images"></i> Ver Galería
@@ -2986,7 +3035,7 @@
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/proyecto1-optimized.jpg" alt="Tendencias en construcción 2024" loading="lazy" width="400" height="250">
+                        <img src="images/tendencias-construccion-2024.jpg" alt="Tendencias en Construcción 2024 - Materiales Modernos" title="Tendencias en Construcción 2024 - Materiales Modernos" loading="lazy" width="400" height="250">
                         <div class="blog-date">
                             <span class="day">15</span>
                             <span class="month">Ene</span>
@@ -3002,7 +3051,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/remodelacion-bano.jpg" alt="Consejos para remodelar baños" loading="lazy" width="400" height="250">
+                        <img src="images/consejos-remodelar-bano.jpg" alt="Consejos para Remodelar tu Baño - Guía Completa" title="Consejos para Remodelar tu Baño - Guía Completa" loading="lazy" width="400" height="250">
                         <div class="blog-date">
                             <span class="day">08</span>
                             <span class="month">Ene</span>
@@ -3018,7 +3067,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/finalizado1.jpg" alt="Materiales sostenibles" loading="lazy" width="400" height="250">
+                        <img src="images/materiales-sostenibles-construccion.png" alt="Materiales Sostenibles en Construcción - Eco-Friendly" title="Materiales Sostenibles en Construcción - Eco-Friendly" loading="lazy" width="400" height="250">
                         <div class="blog-date">
                             <span class="day">02</span>
                             <span class="month">Ene</span>
@@ -3395,40 +3444,20 @@
                 console.log('✅ Hero corregido:', heroImage);
             }
             
-            // 2. CORREGIR IMÁGENES DE PROYECTOS
-            const projectImages = document.querySelectorAll('img[src*="proyecto"], img[src*="finalizado"], img[src*="remodelacion"]');
-            projectImages.forEach((img, index) => {
-                const originalSrc = img.src;
-                
-                // Solo corregir si la ruta no es correcta
-                if (!originalSrc.includes('images/') && !originalSrc.includes('http')) {
-                    const fileName = originalSrc.split('/').pop();
-                    img.src = `images/${fileName}`;
-                    console.log(`🔧 Ruta corregida: ${originalSrc} → images/${fileName}`);
-                } else {
-                    console.log(`✅ Ruta ya correcta: ${originalSrc}`);
-                }
-                
-                // Asegurar que las imágenes se muestren correctamente
-                img.style.setProperty('display', 'block', 'important');
-                img.style.setProperty('width', '100%', 'important');
-                img.style.setProperty('height', 'auto', 'important');
-                img.style.setProperty('max-width', '100%', 'important');
-                img.style.setProperty('opacity', '1', 'important');
-                img.style.setProperty('visibility', 'visible', 'important');
-                
-                // Forzar recarga de la imagen si no se está cargando
-                if (img.complete && img.naturalHeight === 0) {
-                    const currentSrc = img.src;
-                    img.src = '';
-                    setTimeout(() => {
-                        img.src = currentSrc;
-                    }, 100);
-                    console.log(`🔄 Forzando recarga de imagen: ${currentSrc.split('/').pop()}`);
-                }
-                
-                console.log(`✅ Proyecto ${index + 1} procesado: ${img.src.split('/').pop()}`);
-            });
+        // 2. VERIFICAR IMÁGENES EXISTENTES (solo logo y hero)
+        const existingImages = document.querySelectorAll('img[src*="LOGO"], img[src*="hero"]');
+        existingImages.forEach((img, index) => {
+            const originalSrc = img.src;
+            console.log(`✅ Imagen existente ${index + 1}: ${originalSrc.split('/').pop()}`);
+            
+            // Asegurar que las imágenes se muestren correctamente
+            img.style.setProperty('display', 'block', 'important');
+            img.style.setProperty('width', '100%', 'important');
+            img.style.setProperty('height', 'auto', 'important');
+            img.style.setProperty('max-width', '100%', 'important');
+            img.style.setProperty('opacity', '1', 'important');
+            img.style.setProperty('visibility', 'visible', 'important');
+        });
             
             // 3. AGREGAR CSS INLINE PARA ASEGURAR CARGA
             const style = document.createElement('style');
@@ -4310,69 +4339,47 @@
             console.log('✅ Optimizaciones móviles aplicadas');
         });
         
-        // Script específico para corregir imágenes de proyectos
+        // Script para verificar imágenes de proyectos y blog
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🖼️ Verificando imágenes de proyectos...');
+            console.log('🖼️ Verificando imágenes de proyectos y blog...');
             
-            // Función para verificar y corregir una imagen específica
-            function verifyProjectImage(imgElement, expectedSrc) {
-                if (imgElement) {
-                    // Verificar si la imagen se está cargando
-                    if (imgElement.complete && imgElement.naturalHeight === 0) {
-                        console.log(`❌ Imagen no cargada: ${expectedSrc}`);
-                        
-                        // Intentar cargar la imagen
-                        const testImg = new Image();
-                        testImg.onload = function() {
-                            imgElement.src = expectedSrc;
-                            imgElement.style.opacity = '1';
-                            imgElement.style.visibility = 'visible';
-                            console.log(`✅ Imagen corregida: ${expectedSrc}`);
-                        };
-                        testImg.onerror = function() {
-                            console.error(`❌ Imagen no encontrada: ${expectedSrc}`);
-                        };
-                        testImg.src = expectedSrc;
-                    } else {
-                        console.log(`✅ Imagen cargada correctamente: ${expectedSrc}`);
-                    }
-                }
-            }
+            // Verificar imágenes de proyectos
+            const projectImages = document.querySelectorAll('.project-card img');
+            console.log(`📋 Imágenes de proyectos encontradas: ${projectImages.length}`);
             
-            // Verificar imágenes específicas de proyectos
-            const project1Img = document.querySelector('img[alt="Casa Residencial Villa del Lago"]');
-            const project2Img = document.querySelector('img[alt="Centro Comercial Plaza Villarrica"]');
-            const project3Img = document.querySelector('img[alt="Planta Industrial AgroSur"]');
-            
-            if (project1Img) {
-                verifyProjectImage(project1Img, 'images/proyecto1.jpg');
-            }
-            
-            if (project2Img) {
-                verifyProjectImage(project2Img, 'images/proyecto2.jpg');
-            }
-            
-            if (project3Img) {
-                verifyProjectImage(project3Img, 'images/proyecto3.jpg');
-            }
-            
-            // Verificar todas las imágenes de proyectos
-            const allProjectImages = document.querySelectorAll('.project-card img');
-            console.log(`📋 Imágenes de proyectos encontradas: ${allProjectImages.length}`);
-            
-            allProjectImages.forEach((img, index) => {
-                console.log(`🖼️ Proyecto ${index + 1}: ${img.src} - Altura: ${img.naturalHeight}px`);
+            projectImages.forEach((img, index) => {
+                const projectName = img.alt || `Proyecto ${index + 1}`;
+                console.log(`🏗️ ${projectName}: ${img.src.split('/').pop()}`);
                 
-                // Asegurar que las imágenes se muestren
-                img.style.display = 'block';
-                img.style.width = '100%';
-                img.style.height = 'auto';
-                img.style.maxWidth = '100%';
-                img.style.opacity = '1';
-                img.style.visibility = 'visible';
+                // Verificar si la imagen se carga correctamente
+                img.onload = function() {
+                    console.log(`✅ ${projectName}: Imagen cargada correctamente`);
+                };
+                
+                img.onerror = function() {
+                    console.log(`❌ ${projectName}: Error al cargar imagen`);
+                };
             });
             
-            console.log('✅ Verificación de imágenes de proyectos completada');
+            // Verificar imágenes del blog
+            const blogImages = document.querySelectorAll('.blog-card img');
+            console.log(`📋 Imágenes del blog encontradas: ${blogImages.length}`);
+            
+            blogImages.forEach((img, index) => {
+                const blogTitle = img.alt || `Blog ${index + 1}`;
+                console.log(`📝 ${blogTitle}: ${img.src.split('/').pop()}`);
+                
+                // Verificar si la imagen se carga correctamente
+                img.onload = function() {
+                    console.log(`✅ ${blogTitle}: Imagen cargada correctamente`);
+                };
+                
+                img.onerror = function() {
+                    console.log(`❌ ${blogTitle}: Error al cargar imagen`);
+                };
+            });
+            
+            console.log('✅ Verificación de imágenes completada');
         });
         
         // Script del menú hamburguesa
