@@ -48,7 +48,6 @@
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     
@@ -280,6 +279,193 @@
             
             .hover-effect:active {
                 transform: scale(0.98);
+            }
+        }
+        
+        /* ================= ESTILOS DEL MENÚ HAMBURGUESA ================= */
+        
+        /* Estilos base del navbar */
+        .navbar {
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: relative;
+        }
+        
+        /* Logo */
+        .logo {
+            z-index: 1001;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        
+        /* Menú de navegación */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Botón hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        /* Animación del botón hamburguesa cuando está activo */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        /* Media queries para móviles */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            /* Ocultar menú normal en móviles */
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(30, 58, 138, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                backdrop-filter: blur(10px);
+                padding: 2rem 0;
+                gap: 1rem;
+                z-index: 999;
+            }
+            
+            /* Mostrar menú cuando está activo */
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-link {
+                color: white;
+                font-size: 1.1rem;
+                padding: 1rem;
+                display: block;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-link:hover {
+                background: rgba(59, 130, 246, 0.2);
+                color: #60a5fa;
+            }
+            
+            /* Mostrar botón hamburguesa en móviles */
+            .hamburger {
+                display: flex;
+            }
+            
+            /* Ajustar logo en móviles */
+            .logo-img {
+                height: 40px;
+            }
+        }
+        
+        /* En pantallas grandes mantener menú horizontal */
+        @media (min-width: 769px) {
+            .hamburger {
+                display: none !important; /* Ocultar hamburguesa en escritorio */
+            }
+            
+            .nav-menu {
+                display: flex !important; /* Mostrar menú horizontal en escritorio */
+                position: static !important;
+                background: transparent !important;
+                left: auto !important;
+                top: auto !important;
+                width: auto !important;
+                flex-direction: row !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+            }
+            
+            .nav-link {
+                color: white !important;
+                font-size: 1rem !important;
+                padding: 0.5rem 1rem !important;
+                display: inline-block !important;
+                border-radius: 5px !important;
+                border-bottom: none !important;
+            }
+            
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.1) !important;
+                color: #3b82f6 !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0.75rem;
+            }
+            
+            .nav-menu {
+                top: 60px;
+                padding: 1.5rem 0;
+            }
+            
+            .nav-link {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .logo-img {
+                height: 35px;
             }
         }
     </style>
@@ -3154,18 +3340,20 @@
             const projectImages = document.querySelectorAll('img[src*="proyecto"], img[src*="finalizado"], img[src*="remodelacion"]');
             projectImages.forEach((img, index) => {
                 const originalSrc = img.src;
+                
+                // Corregir rutas que no tienen 'images/' al inicio
+                if (!originalSrc.includes('images/') && !originalSrc.includes('http')) {
+                    const fileName = originalSrc.split('/').pop();
+                    img.src = `images/${fileName}`;
+                    console.log(`🔧 Ruta corregida: ${originalSrc} → images/${fileName}`);
+                }
+                
                 img.style.setProperty('display', 'block', 'important');
                 img.style.setProperty('width', '100%', 'important');
                 img.style.setProperty('height', 'auto', 'important');
                 img.style.setProperty('max-width', '100%', 'important');
                 
-                // Forzar recarga
-                img.src = '';
-                setTimeout(() => {
-                    img.src = originalSrc;
-                }, 50);
-                
-                console.log(`✅ Proyecto ${index + 1} corregido: ${originalSrc.split('/').pop()}`);
+                console.log(`✅ Proyecto ${index + 1} corregido: ${img.src.split('/').pop()}`);
             });
             
             // 3. AGREGAR CSS INLINE PARA ASEGURAR CARGA
@@ -3230,11 +3418,27 @@
             if (hero) {
                 const isMobile = window.innerWidth <= 768;
                 const heroImage = isMobile ? 'images/hero-mobile.jpg' : 'images/hero-desktop.jpg';
-                hero.style.backgroundImage = `url('${heroImage}')`;
-                hero.style.backgroundSize = 'cover';
-                hero.style.backgroundPosition = 'center';
-                hero.style.backgroundRepeat = 'no-repeat';
-                console.log('✅ Hero forzado:', heroImage);
+                
+                // Verificar que la imagen existe antes de aplicarla
+                const testImg = new Image();
+                testImg.onload = function() {
+                    hero.style.backgroundImage = `url('${heroImage}')`;
+                    hero.style.backgroundSize = 'cover';
+                    hero.style.backgroundPosition = 'center';
+                    hero.style.backgroundRepeat = 'no-repeat';
+                    console.log('✅ Hero forzado:', heroImage);
+                };
+                testImg.onerror = function() {
+                    console.error('❌ Imagen hero no encontrada:', heroImage);
+                    // Usar imagen de respaldo si existe
+                    const fallbackImage = 'hero-desktop.jpg';
+                    hero.style.backgroundImage = `url('${fallbackImage}')`;
+                    hero.style.backgroundSize = 'cover';
+                    hero.style.backgroundPosition = 'center';
+                    hero.style.backgroundRepeat = 'no-repeat';
+                    console.log('🔄 Usando imagen de respaldo:', fallbackImage);
+                };
+                testImg.src = heroImage;
             }
             
             // Corregir todas las imágenes
@@ -4030,6 +4234,70 @@
             }
             
             console.log('✅ Optimizaciones móviles aplicadas');
+        });
+        
+        // Script del menú hamburguesa
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🍔 Inicializando menú hamburguesa...');
+            
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                // Toggle del menú hamburguesa
+                hamburger.addEventListener('click', function() {
+                    console.log('🍔 Menú hamburguesa clickeado');
+                    
+                    // Toggle de clases
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                    
+                    // Actualizar aria-expanded
+                    const isActive = navMenu.classList.contains('active');
+                    hamburger.setAttribute('aria-expanded', isActive);
+                    
+                    console.log('✅ Menú toggle ejecutado, estado:', isActive ? 'abierto' : 'cerrado');
+                });
+                
+                // Cerrar menú al hacer clic en un enlace (solo en móviles)
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        // Solo cerrar en móviles
+                        if (window.innerWidth <= 768) {
+                            navMenu.classList.remove('active');
+                            hamburger.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', false);
+                            console.log('📱 Menú cerrado por clic en enlace (móvil)');
+                        }
+                    });
+                });
+                
+                // Cerrar menú al hacer clic fuera (solo en móviles)
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                            navMenu.classList.remove('active');
+                            hamburger.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', false);
+                        }
+                    }
+                });
+                
+                // Cerrar menú al redimensionar ventana (si se cambia a desktop)
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', false);
+                        console.log('💻 Menú cerrado por cambio a desktop');
+                    }
+                });
+                
+                console.log('✅ Menú hamburguesa configurado correctamente');
+            } else {
+                console.error('❌ Elementos del menú hamburguesa no encontrados');
+            }
         });
     </script>
 
